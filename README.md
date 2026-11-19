@@ -1,4 +1,4 @@
-# BYU club email composer
+# BYU club email composer and expense helper
 
 **One web page that writes the emails a BYU club officer sends again and again:**
 print orders to Print & Mail and Cougar Creations, poster-space requests to Campus
@@ -14,8 +14,20 @@ with Claude Code, so that officers spend less time on busy work and more on thei
 1. Download `email.html` and open it in a browser. That's the whole install.
 2. Search the file for `[YOUR` and replace each placeholder: club name, club email,
    venue, ticket price, meeting time, and so on. The settings are near the top of the
-   `<script>` block.
+   `<script>` block. Until you do, a draft that still holds one shows a red
+   *Add … on Details* line.
 3. Optional: paste it into your club's BrightSpot page, so every officer gets the same copy.
+
+## The expense helper
+
+`expense.html` writes out every field of the **New Expense Request** form on
+clubs.byu.edu, with a Copy button beside each one, so you paste them in one at a time.
+It can't fill the form in for you. The orders in it (print runs at Print & Mail,
+Cougar Creations and the BYUSA Media Hub, plus a pizza order) are **examples**. Replace
+the `[YOUR …]` placeholders, check every price against a current quote, and delete the
+orders your club doesn't place. The comment at the top of the file explains how to
+edit an order. Keep it in the same folder as `email.html`: its BYUSA order step links
+to the composer.
 
 ## Read this first
 

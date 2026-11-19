@@ -1,0 +1,2905 @@
+<!-- Load-bearing. Do not delete as a stray shell fragment; explained below. -->
+<html lang="en">
+
+<!-- This has to be near the top, and it has to be here rather than in a
+     <head>, because there is no <head>: a CMS like BrightSpot serves this file
+     and nothing else, so the browser synthesises the document around it. Without this a
+     phone lays the page out at a ~980px virtual viewport and every media
+     query below matches as though it were a desktop. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+
+<title>[YOUR CLUB] | Expense request helper</title>
+
+<!-- Asks search engines to stay away. It is NOT a security control -- anyone
+     told the URL can open it. -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- The <html lang> tag at the top is required (WCAG 3.1.1) and leaves quirks
+     mode alone. It is not a licence to add a doctype. -->
+
+<!-- The tab icon, inlined like every other image here. Swap in your own. -->
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAKnUlEQVR42u2dW6wdVRnHv++b296zL2eftlQwEMAEIxdN1IQYEV948EEThTceSDSpPhii4YGYqHh5MEHxARMS4QEEiQpEEoohBaJGoAgWQ4JUbLm02JZSeno4p/s+M2utz4cprbRnn90z+3L2gf8vO+nD6d5r1sxvvvWtNbPW4vkLNhMARRGcAgCBAAQCEAhAIAAgEIBAAAIBCAQABAIQCEAgAIEAgEAAAgEIBCAQABAIQCAAgQAEAhAIAAgEIBCAQAACAQCBAAQCEAhAIAAgEIBAYObwp1MM83h+R3UqBSnphIsYWpGxFHQ2pWwMgYwlUiImKlYlJlViJk+mUZAwiQy8JNaO9Pv54Q2tiFNylnjEiggJfyAEqsXsCesIdwQzW6vdRFe/ZesVlqLn/GRBmdFeomcGAFUKfCpHMmpFnHb7unrkKIccBqOesTTTfqrMG1wgp3TnTZs+foHfSwveEM5RpUwv7Mm++cvFKOAzzyozGUv1mB+8ZUujLsYUjP/W0VyFtz/b+95dy/WYrTv1J0+o2dVrLi/dfmOjeEWUyiH9+83s67e+OygIeULLbfftr9W/9ZXqUks9r3hFfrOj/fM/tE6ryEaNQI2ahH2VQlm7s1SrcK3MQ5OGeoUbVc4y4kIFWUvzNYlLvOKdn0egkSriKC5xLeahuUs55PmaOOc8v3hFyiFPOg2aXg5kDBlL4gqe98yQsWsoiF3BGzcztMr9qjpaRd77+tn8z7zKxQTIK+I+MEk086nPKF+fUkFjOpgVc+iz/+7oFcE4EJh1IBCAQAACAQgEIBAAEAhAIACBAAQCAAIBCAQgEIBAAEAgAIEABAIQCAAIBCAQgEAAAgEIBAAEAhAIQCAAgQCAQAACAQgEIBAAEAhAIACBAAQCAAKBMeFvoGPNV6r3hFZcJ1p1+PLv4MMrUL6UeLPl/MELjavyFHaHABtPIGZKMj3/HO9H32h43kpbGTCpoyjgcsTOTWmFW7CRBMoyOneTfOe6Wr6Vymmc3F+l3XMOQQgCDWrCltpDFohHGgSBVk2i0TahGw8gEAAQCEAgAIEABAIQCAAIBCAQgEAAAgEAgQAEAhAIQCAAIBCYEP7GOtyh78zjbWgItJocgT9EkMzgjWgINMCeNNN3luwgg5RImDfXBUEIAp2Oc1SN+eV92bbbFqPB88LqMT/0ky3zNckM2jIIdAbWUbOrUUCDBBImTCyEQINbMSLfI99bWSAi8jxcUAg0rBeWfwb9CUwZjAMBCAQgEIBAAAIBAIEABAIQCEAgACAQgEAAAgEIBAAEAhAIQCAAgQCAQOt20nnYK//83qQAhkAfIPi9F2dHuayqFPpDJo0wU+iPYeehKWwbAoHO+sITEdOIW7nk2ohwPjWABwegYBxvqztHCoFmKgJllqwbNSpEAZVCVl25hVIiESpH4kYOQamZ+EwDCLQWgZiSVK3TUWYtOqdxJLVY7IBgpkq+UKMqbrS2kon6ycTbMAi0hjZMhLqJGqvMRZsGJusoLnG1zNYN8ENJhBtVcW6kJJqZ2j2d9FQnCLSGHEiYWl09MW9aC0YF56hS4q3znrUrpNLMZB3VYt5UG2zY2baV2uy6SffjINBaTpZwq+c6ffVGaMOUyPP4iosCu1JwYKLU6PnneFvnvcwUbyuFqZ/Sctt5wgqBZqUJY0pSXWxaT4r3bpjIWL3qU1Ec8ZlZkAilhq78RFivSOFsPU/Dk1QXm+p7NNGeGARaS+QQ6iZ6dMn5fvHOjQh1+/rZS8LPXx41Oy4fE8o/nlBmaK7C130xTtIRUnUlYer0dWHZIgLNWC8s07cW7IhrEOVDSjdfXz+n4S0cd5lRY8lY6vR1ue1uvLZ2xcVhN1Hh4r8f+Hxkyba6zptwBPKhxRpzC379sBlxhEaYen297MLg/u9vvuOR9u59aT9V3+OPbvGuvya+7uq41XWj7B6sSoHHB98x7Z5Wy+wg0Ey1Yq8fypKUZLTeTd6QXXphcOdN80eXXavropC3NqQUcqurY1gdi+nVQ8ZY5eJDDhBo7AIpRSHvP2LeWbZbGyP1knKHeqmS0lyFN9V8p5pZSjo6+s7lTJQZ3b0v8zzGo4zZEijwaGHZ7T2QRcEYHlUKkwgZS0mmmSEex773qhQEtLDs9h7KVlwOEAKtcx6dZrprT+rJ2JqGk72wcVleCviVN9PDx2zoEwSauSAUBvzc7qSZd3BmNFHjZ15OUqNTWGkUAq0Np1SOeM8Bs3t/Vo7YuZmzx/dosWmf+VdSChnvA81mT546idvxj54/+RR1zX47qpT4+VfS1w6Z0uQTIAhUMAjFkTy+q39owYTBbK3syUTW0cNPd52b0krZEKhQZz6gA0ft9p29SkmsmyGzKyV+8bX0qZeSSpmnc2AQqHAmRL/7c+fwMRvNThBSEqG7H2t3+2MYTIJAkw1CpYD3vW3ufqxdnY0gZB3VY/7Li/3Hd/VrMU/tkCBQ8XS1Hst9T3Se+09Sr/D6OpSPcC539BcPtEinuk8IBCreYRamJNMf33O82dHAn0afeZUmtVqW2x5o7t6XxqWpDi5AoNGS1jK/9EZ2yz3LpZB4nbZ6MZY21+W+Jzu/faIzV5l2ewqBRss8LDWq/PBTvZ/d36zHwkxTjkPG0pY5efTZ3k/vPV6O1mFcCk/jx5C9zlX5zkdbTumHN9RTo0lK/uSfcuQjPZvn5OGnuzf/ejl/EDv9ZhQRaGwJ9V2Ptm+8/d1OTxtVtm6C11KVjKVSxHHEv/pj67t3LKmS79G6JGGIQGPLhxpV3v733t6D5gc3zF3zmSgz1E2UiUTGWUo+tb5RlT0Hslt/39yxq18r8/SbzmkLpEpOi1cy/+7ZpKgnC+IJF7RiW9aoyv63zbbbFr96Vbzty5UrLg6co26i+QyvYu9sqJISqZIwlUOOQj58zN71p9a9O9rHjrtGhd26bpQ2JYGikMsR52ehWBsRRxwFw79cCrkcsS8Fx0KsozjiMCg4kGItlUJWoof+1nnyhd6Xrixde3X86UvC+aoYp2mmmTl1FzER8emiKxHpqReNmMj3KfQ5DDhJ9dWD2WPP9x/Z2d1/xFRLsu7jT9MT6L9HjC/USwvONHBKcYkPHjWra+GU3jhsjjXZFN101yrVY3l70RZ+5Tn3o1ERY+nBv3a37+xdemHwhU9Gn7ssuuR8f2vDCwMSZiWyVk8FPD0hEzOJkCckzKpqHL3bcq8cyf65N935cvLiq+lSy5VLPF8VpzQLI+A8f8Hm6TRh4zlcnpWChv8CkQg5pV6iqdEo4I/Mexed63/sPO+i84JzN0mjKvVYyhGHPomwKhmrvUTbPV3uuIUle+CofeOwefOIeWvBdvpOhOOI82R5dl4BmJJAH2aEKU9yM0NpptaRqnoeRwGHPvkei5wYhMwdyiwlqeZv7Itw4FPocz4XVie/3g96YbPYQcsve+BTGOShjXMbrCPjNE96TqZEwlQp8clV8PJ4Y92M1g4CTY8z95U+kWnJ+7Jo/T/nZh8ItK5Kve+fjdlA4yoCCAQgEIBAAAIBAIEABAIQCEAgACAQgEAAAgEIBAAEAhAIQCAAgQCAQAACAQgEIBCAQABAIACBAAQCEAgACAQgEIBAAAIBAIEABAIzx/8AUiadJ6uqsRsAAAAASUVORK5CYII=">
+
+<!-- The charset tag must sit inside the first 1024 bytes AND ahead of the
+     first non-ASCII byte, so everything above it stays pure ASCII: write "--",
+     never an em dash. Without it the editable Description shows, and copies,
+     every em dash as three characters. -->
+
+<!--
+  [YOUR CLUB] — the club's expense-request helper.
+
+  Writes out every field of the "New Expense Request" form on clubs.byu.edu so
+  you can paste them in one at a time. Nothing here submits anything. Nothing
+  here talks to a server: no network requests, no database, no build step.
+  Open this file in a browser and it works.
+
+  IT CANNOT FILL THE FORM IN FOR YOU. clubs.byu.edu is BYUSA's portal, not
+  ours, and no link can reach inside somebody else's form. What this page does
+  is work out every value — including the ones you would otherwise do in your
+  head, like the line totals — and put a Copy button
+  next to each one.
+
+  Nothing on it is secret: it is a price list and an arithmetic sheet, it
+  makes no network requests, and it cannot spend money.
+
+  THE ORDERS BELOW ARE EXAMPLES. They are one club's real orders, with its
+  name taken out, so you can see what a filled-in order looks like. Replace
+  every [YOUR …] placeholder, check every price against a current quote, and
+  delete the orders your club does not place.
+
+  ============================================================================
+  TO CHANGE A PRICE OR AN ORDER, EDIT THE BLOCK DIRECTLY BELOW THIS COMMENT.
+  ============================================================================
+
+  Every price, every quantity, every line of wording is plain text in the next
+  section. You do not need to understand the code further down to change any
+  of it. When a printer puts their prices up, you change the number in one
+  place here and every link anybody has bookmarked picks it up.
+
+  Seven rules, and that is the whole job:
+
+    1. Edit only the text BETWEEN the tags, or the value between the quote
+       marks. Leave the tags themselves alone.
+       Good:  data-cost="0.45"
+       Bad:   data-cost=0.45          (the quote marks matter)
+
+    2. Prices are plain numbers. No dollar sign, no comma.
+       Good:  data-cost="22.45"
+       Bad:   data-cost="$22.45"
+
+    3. Anything in curly braces, like {eventDate}, is filled in automatically.
+       Keep the braces and the spelling exactly. The list is at the bottom of
+       this comment.
+
+    4. {?something} ... {/something} means "only include this when that
+       applies". Keep both halves or delete both halves — never one.
+
+    5. Write &amp; where you want an ampersand. A bare & can confuse the page.
+
+    6. data-slug is the line's permanent name. It is what a saved link uses to
+       say "four of these, not two". CHANGING A SLUG BREAKS EVERY SAVED LINK
+       THAT MENTIONS IT — renaming the visible text is free, renaming the slug
+       is not. Adding and deleting lines is safe.
+
+    7. data-fold-into="some-slug" on a line means "when this order is pasted
+       into the form, add this line's cost onto that line and don't paste this
+       one separately". It is how the flat flyer-cut charge rides on the sheet
+       line so BYUSA read one item. BOTH lines still show in the totals on this
+       page and both still take saved-link overrides — the fold is only the
+       numbered blocks you copy. Delete the attribute to un-fold.
+
+  If the page ever goes blank after an edit, keep a clean copy of this file
+  somewhere safe, paste it again and start over.
+
+  The placeholders you can use in a description:
+
+    {eventDate}    the show date, written out    {officerName}  who is filing
+    {vendor}       the printer's name            {total}        the order total
+    {eventKind}    what kind of night it is, picked from the dropdown below
+
+  ⚠ {eventDate} AND {eventKind} ALSO DECIDE WHETHER THEIR QUESTIONS GET ASKED.
+    An order whose description and justification mention neither is not shown
+    the "Show or event date" box or the "What kind of night is it" dropdown on
+    step 2 — because it has no show. That is what the recruitment orders are:
+    they advertise the club and its meeting, not an event. Put {eventDate}
+    back into one of those two blocks and the date box comes back with it.
+    On an order with no show date the pick-up date is typed rather than worked
+    out, and it becomes the first box on the step.
+
+  The yes/no conditions you can use with {?...}:
+
+    eventDate      a show date was given
+
+  Each order carries THREE vendor attributes, and they are three different
+  facts. One string cannot be all of them:
+
+    data-vendor-type     BYU or Non-BYU. A pair of radio buttons on the form,
+                         and it decides WHICH vendor dropdown appears below
+                         it. Write it exactly as the form spells it, hyphen
+                         included: BYU, or Non-BYU
+    data-vendor          the vendor's NAME, in plain words. This is what
+                         {vendor} writes and what a human reads
+    data-vendor-option   the row to pick in whichever dropdown the line above
+                         brought up. YOU CANNOT TYPE INTO EITHER ONE:
+
+                           BYU      Bookstore, Media Hub, Cougar Creations/
+                                    Copy Center, Dining Services/Food-to-Go/
+                                    Catering, OIT/AV Productions, and four
+                                    Physical Facilities rows
+                           Non-BYU  Costco, Walmart, Amazon, Other
+
+                         ⚠ THERE IS NO "BYU PRINT & MAIL" ROW. They are
+                         Cougar Creations' parent company, so that order is
+                         filed under Cougar Creations/Copy Center and says so
+                         in its description instead. Check the live form if
+                         the list above looks out of date.
+
+                         The Non-BYU list DOES have an "Other" row, and it is
+                         where nearly everything the club buys lands. Pick
+                         Other and the form opens an "Other vendor" box
+                         underneath — the page fills that box with
+                         data-vendor, which is why a pizza shop needs no
+                         apology in its description the way Print & Mail does
+
+  The other blocks you can edit here:
+
+    data-part="justification"  the "Justification Details" box on the form,
+                           shown under EVERY item of the order. This is where
+                           you tell BYUSA why the club needs the money, so
+                           write about the EVENT and never about the printer:
+                           what the posters are for and what the club gets out
+                           of it. Paper stock and sizes do not belong here.
+                           Takes the same {placeholders} a description does.
+                           A second one with data-night="<a night type>" is
+                           used on that kind of night instead, and the one
+                           with no data-night on every other kind
+    data-part="sentence"   one line shown ABOVE the form on step 2, for the
+                           one thing that has to happen BEFORE you start.
+                           No order has one today: the design approval the
+                           BYUSA orders used to ask for here is needed before
+                           PRINTING, not before filing, so it moved to the
+                           email composer. Leave it out unless the officer
+                           would waste the trip without it
+    data-part="next-steps"  one line shown at the END of the order's LAST
+                           step, for what happens AFTER you submit. Every
+                           order has one. That last step is 3 normally, and 4
+                           on the two BYUSA orders — where what is left over
+                           happens after the ORDER EMAIL, not after the form.
+                           Keep it to what is left to do RIGHT NOW: the
+                           officer came here to file an expense request, not
+                           to place a print order, so anything belonging to a
+                           later job belongs somewhere else
+    data-purchase-rule     WHEN THE MONEY IS ACTUALLY SPENT, relative to the
+                           show. Two values, and getting it wrong files the
+                           request a fortnight out:
+
+                             (left out)   the poster clock — the Thursday two
+                                          weeks before the show, because the
+                                          posters have to be up by then
+                             on-the-day   the show itself. Pizza is bought on
+                                          the night, not a fortnight early
+
+                           Anything else is read as the poster clock, so a
+                           typo here is silent
+    data-list="night-types"  the "what kind of night" dropdown. Add or remove
+                           an <option> line and the dropdown changes. The FIRST
+                           one is what the page starts on, so it should be the
+                           club's usual night. Leave the one marked
+                           value="other" last — it is what opens the free-text
+                           box for anything not on the list.
+                           data-guests="yes" on an option means members bring
+                           people nobody can name in advance, so the guests
+                           box below starts ticked on that kind of night.
+                           data-nights="2" means the night runs Friday AND
+                           Saturday. An on-the-day order (pizza) is then two
+                           expense requests, one per night, and the Copy step
+                           gets a button at the bottom for the other night
+    data-part="guests"     on a Food order: the line added under the attendee
+                           names when the officer ticks the box. Its
+                           data-label is the box's wording, and its
+                           data-count is how many the guests add to the head
+                           count. Leave it out and the order has no box
+    data-brief-item        on a BYUSA line only: which row it ticks on BYUSA's
+                           own design brief. Without it that line is missing
+                           from the brief the page generates.
+                           ⚠ IT ALSO DECIDES WHETHER THE ORDER GETS A STEP 4.
+                           An order with at least one of these lines is a
+                           BYUSA order, so the page gives it a fourth step
+                           holding the brief, the artwork and the order email.
+                           Every other order stops at step 3
+    data-art-size          on a BYUSA line only: the size the artwork is
+                           actually printed at, in INCHES, width first —
+                           8.5x11, 4x5.25. The page builds one JPEG per
+                           different size on the order and offers it for
+                           download, because BYUSA want a file per size before
+                           they will queue the job. WRITE IT AS THE TRIM SIZE,
+                           the size of the finished thing in someone's hand —
+                           quarter sheets are 4x5.25 and NOT the 4.25x5.5 you
+                           get by quartering a page, because their cutter
+                           needs a border between them. A line without this
+                           attribute simply gets no file; two lines that share
+                           a size share one file
+    data-key="byusa-email"   the order email the BYUSA button writes. Its
+                           data-to is the address it goes to, and that is the
+                           single most likely edit on this page — it changed
+                           once already. Its subject and body take the
+                           placeholders above plus these two:
+
+    {order}        the order, line for line, the same lines the expense
+                   request shows. This is what BYUSA asked to match
+    {phone}        the callback number, from whoever is filing
+
+  data-type is the form's per-item "Type" dropdown, and it has exactly two
+  options: Food, and Other. THERE IS NO "Printing" - every print line the
+  club files is Other. Read off the live form 2026-08-28. Do not put a stock,
+  a size or a description in here - the size goes in data-item, and nothing on
+  this page carries a paper stock any more. The message that actually tells a
+  printer about the stock is written by the email composer, email.html.
+
+  ⚠ Food IS NOT JUST A LABEL. Setting a line to Food makes clubs.byu.edu
+  open two more boxes under that item, and the form will not go through
+  without the first of them:
+
+    Justification for Food Purchase   a dropdown, and this page fills it from
+                                      data-food-justification on the line. It
+                                      has exactly four rows, and you cannot
+                                      type into it:
+
+                                        Staff/Volunteer Appreciation
+                                        Required Attendance During Mealtime
+                                        Incentive to Encourage Participation
+                                          or Involvement
+                                        Used as Supplies or Decorations for
+                                          Event
+
+                                      Read off the live form 2026-09-20. Spell
+                                      the row you want EXACTLY as it appears
+                                      there - a value the dropdown does not
+                                      have is a value nobody can pick, which
+                                      is what "Printing" was for three weeks
+    # of Attendees                    WORKED OUT, never typed: one per name
+                                      in the box below, plus the guests
+                                      box's data-count when it is ticked.
+                                      BYUSA expect the two to agree
+    Name of Each Attendee             typed on step 2 and REMEMBERED IN THE
+                                      OFFICER'S OWN BROWSER. Never written
+                                      into this file and never into a link:
+                                      this page is public to anyone with the
+                                      address, and those are members' names
+-->
+
+<div id="hu-exp-wording" hidden style="display:none">
+
+  <!-- ============ What kind of night is it ============
+       The dropdown on step 2. Whatever is picked here is what goes into the
+       description wherever {eventKind} appears. -->
+  <select data-list="night-types">
+    <option>club event</option>
+    <option>club meeting</option>
+    <option data-guests="yes">party</option>
+    <option value="other">something else — let me type it</option>
+  </select>
+
+  <!-- ============ Event — BYU Print & Mail ============
+       The vendor dropdown has no Print & Mail row, so this files under Cougar
+       Creations/Copy Center. The description names Print & Mail in its first
+       three words: keep that, it is the only thing on the request that says
+       where the money goes. -->
+  <div data-key="event_print_and_mail"
+       data-label="Event (BYU Print &amp; Mail)"
+       data-vendor-type="BYU"
+       data-vendor="BYU Print &amp; Mail"
+       data-vendor-option="Cougar Creations/Copy Center">
+
+    <pre data-part="description">Printing from BYU Print and Mail for a [YOUR CLUB] {eventKind}{?eventDate}, {eventDate}{/eventDate}. Two large mounted posters for approved campus display frames.</pre>
+
+    <pre data-part="justification">Posters will help us advertise for our {eventKind}. This will give more people the chance to participate in our club.</pre>
+
+    <ul data-part="items">
+      <li data-slug="mounted"
+          data-item="11x17 poster mounted on a 14x22 sheet"
+          data-type="Other"
+          data-qty="2"
+          data-cost="22.45"></li>
+    </ul>
+
+    <p data-part="next-steps">Should be approved within 3 business days.</p>
+  </div>
+
+
+  <!-- ============ Event — Cougar Creations ============ -->
+  <div data-key="event_cougar"
+       data-label="Event (Cougar Creations)"
+       data-vendor-type="BYU"
+       data-vendor="Cougar Creations"
+       data-vendor-option="Cougar Creations/Copy Center">
+
+    <pre data-part="description">Printing for a [YOUR CLUB] {eventKind}{?eventDate}, {eventDate}{/eventDate}. A banner, posters for approved campus boards, plus hand-out flyers for the meeting and dorms.</pre>
+
+    <pre data-part="justification">Posters will help us advertise for our {eventKind}. This will give more people the chance to participate in our club.</pre>
+
+    <ul data-part="items">
+      <li data-slug="poster-85x11"
+          data-item="8.5x11 poster, color, text stock"
+          data-type="Other"
+          data-qty="5"
+          data-cost="0.58"></li>
+      <li data-slug="banner"
+          data-item="3x5 ft banner, color satin, 15 sq ft"
+          data-type="Other"
+          data-qty="1"
+          data-cost="56.25"></li>
+      <li data-slug="flyer-sheets"
+          data-item="Cut flyer sheets, 4 flyers per page, color, 24 lb"
+          data-type="Other"
+          data-qty="9"
+          data-cost="0.49"></li>
+      <li data-slug="cutting"
+          data-item="Flyer cutting"
+          data-type="Other"
+          data-qty="1"
+          data-cost="0.95"
+          data-fold-into="flyer-sheets"></li>
+    </ul>
+
+    <p data-part="next-steps">Should be approved within 3 business days.</p>
+  </div>
+
+
+  <!-- ============ Event — BYUSA ============
+       DO NOT paste a spare line into this comment as a reminder. A line
+       written here is invisible on the page but the club's link builder
+       still counts it, so the order would be priced with a line nobody can
+       see. Change a real line or add a real one.
+
+       data-brief-item is the row this line ticks on BYUSA's own design
+       brief. It has to be there or the brief comes out blank for the line. -->
+  <div data-key="event_byusa"
+       data-label="Event (BYUSA)"
+       data-vendor-type="BYU"
+       data-vendor="BYUSA Media Hub"
+       data-vendor-option="Media Hub">
+
+    <pre data-part="description">Printing for a [YOUR CLUB] {eventKind}{?eventDate}, {eventDate}{/eventDate}, through the BYUSA Media Hub. A banner, letter posters and flyers for approved campus boards, the meeting and dorms.</pre>
+
+    <pre data-part="justification">Posters will help us advertise for our {eventKind}. This will give more people the chance to participate in our club.</pre>
+
+    <ul data-part="items">
+      <li data-slug="letter"
+          data-brief-item="letter"
+          data-art-size="8.5x11"
+          data-item="Letter page 8.5&quot; x 11&quot;, color"
+          data-type="Other"
+          data-qty="5"
+          data-cost="0.15"></li>
+      <li data-slug="quarter-sheet"
+          data-brief-item="quarter-sheet"
+          data-art-size="4x5.25"
+          data-item="Quarter-sheet flyers 4&quot; x 5.25&quot;, 4 per page, color"
+          data-type="Other"
+          data-qty="9"
+          data-cost="0.15"></li>
+      <li data-slug="inside-banner"
+          data-brief-item="inside-banner"
+          data-art-size="36x60"
+          data-item="Inside Banner 36&quot; x 60&quot;, color"
+          data-type="Other"
+          data-qty="1"
+          data-cost="30"></li>
+    </ul>
+
+    <p data-part="next-steps">Should be approved within 3 business days.</p>
+  </div>
+
+
+  <!-- ============ Recruitment flyers — Cougar Creations ============ -->
+  <div data-key="recruit_cougar"
+       data-label="Recruitment Flyers (Cougar Creations)"
+       data-vendor-type="BYU"
+       data-vendor="Cougar Creations"
+       data-vendor-option="Cougar Creations/Copy Center">
+
+    <pre data-part="description">Recruitment flyers for [YOUR CLUB], [ONE-LINE DESCRIPTION OF YOUR CLUB]. A campus run for the dorms, halls and info desks — they advertise the club's weekly meeting, not any one show.</pre>
+
+    <pre data-part="justification">Flyers will help us advertise the club. This will give more people the chance to participate in our club.</pre>
+
+    <ul data-part="items">
+      <li data-slug="flyer-sheets"
+          data-item="Cut flyer sheets, 4 flyers per page, color, 24 lb"
+          data-type="Other"
+          data-qty="150"
+          data-cost="0.49"></li>
+      <li data-slug="cutting"
+          data-item="Flyer cutting"
+          data-type="Other"
+          data-qty="1"
+          data-cost="0.95"
+          data-fold-into="flyer-sheets"></li>
+    </ul>
+
+    <p data-part="next-steps">Should be approved within 3 business days.</p>
+  </div>
+
+
+  <!-- ============ Recruitment flyers — BYUSA Media Hub ============ -->
+  <div data-key="recruit_byusa"
+       data-label="Recruitment Flyers (BYUSA)"
+       data-vendor-type="BYU"
+       data-vendor="BYUSA Media Hub"
+       data-vendor-option="Media Hub">
+
+    <pre data-part="description">Recruitment flyers for [YOUR CLUB], [ONE-LINE DESCRIPTION OF YOUR CLUB], via the BYUSA Media Hub. A campus run for the dorms, halls and info desks — they advertise its weekly meeting, not any one show.</pre>
+
+    <pre data-part="justification">Flyers will help us advertise the club. This will give more people the chance to participate in our club.</pre>
+
+    <ul data-part="items">
+      <li data-slug="quarter-sheet"
+          data-brief-item="quarter-sheet"
+          data-art-size="4x5.25"
+          data-item="Quarter-sheet flyers 4&quot; x 5.25&quot;, 4 per page, color"
+          data-type="Other"
+          data-qty="150"
+          data-cost="0.15"></li>
+    </ul>
+
+    <p data-part="next-steps">Should be approved within 3 business days.</p>
+  </div>
+
+
+  <!-- ============ Pizza ============
+       data-purchase-rule="on-the-day" is the one that would be expensive to
+       get wrong: without it the purchase date runs on the poster clock and the
+       request is filed a fortnight before anybody eats anything. -->
+  <div data-key="pizza"
+       data-label="Pizza"
+       data-vendor-type="Non-BYU"
+       data-vendor="[YOUR PIZZA PLACE]"
+       data-vendor-option="Other"
+       data-purchase-rule="on-the-day">
+
+    <pre data-part="description">Pizza for the people at a [YOUR CLUB] {eventKind}{?eventDate} on {eventDate}{/eventDate}. Pizza only, nothing else on the order, so it stays inside BYU's exemption from the approved-caterer list.</pre>
+
+    <p data-part="guests" data-label="Unnamed guests eat pizza?" data-count="2">+ Club members might invite extra guests to encourage new people to try the club out</p>
+
+    <pre data-part="justification">Feeding people is what keeps them in the room for the whole night and what brings the ones who have never come before. This will give more people the chance to participate in our club.</pre>
+    <ul data-part="items">
+      <li data-slug="large-pizza"
+          data-item="Large pizza"
+          data-type="Food"
+          data-food-justification="Incentive to Encourage Participation or Involvement"
+          data-qty="4"
+          data-cost="16.00"></li>
+    </ul>
+
+    <p data-part="next-steps">Should be approved within 3 business days.</p>
+  </div>
+
+
+  <!-- ============ The BYUSA order email ============
+       CHANGE THE ADDRESS HERE. data-to is the one thing on this page most
+       likely to need editing, and nothing else has to change with it.
+       {order} is the order line for line, as the expense request shows it:
+       BYUSA ask for the two to match, so keep it. -->
+  <div data-key="byusa-email" data-to="byusamedia@byu.edu">
+
+    <pre data-part="subject">[YOUR CLUB] print order{?eventDate} — {eventDate}{/eventDate}</pre>
+
+    <pre data-part="body">Hello,
+
+[YOUR CLUB] would like to place the following print order.
+
+{order}
+
+The expense request for this is already filed on clubs.byu.edu and matches the lines above.
+
+Attached:
+
+1. Our completed Clubs Design Brief, which functions as the order form
+2. The artwork, one file per size
+3. The BYUSA Clubs office's email approving the design
+4. Accounting's email approving the expense request
+
+Thank you,
+{officerName}
+[YOUR CLUB]
+{phone}</pre>
+  </div>
+
+</div>
+
+<!--
+  ============================================================================
+  THE MACHINERY. Below this line is code. Nothing here needs changing to alter
+  a price, a quantity or a line of wording — that is all in the block above.
+  ============================================================================
+-->
+
+<style>
+#hu-exp {
+  --ink:     #111D13;
+  --surface: #23271A;
+  --primary: #6E0E0A;
+  --picked:  #451C13;  /* the current step's circle: the maroon at 45%
+                          over --surface */
+  --accent:  #DEB72B;
+  --paper:   #EEF0F2;
+  /* Three greys, and which one you want depends on whether it is text.
+     email.html uses the same split; keep them in step. */
+  --muted:   #A3ADA2;  /* TEXT. The brand sage #798478 lightened -- the brand
+                          value is 4.45:1 on --ink and fails WCAG AA for body
+                          text, which wants 4.5:1. This is 7.49:1. */
+  --rule:    rgba(121, 132, 120, 0.2);
+                       /* HAIRLINES -- panel edges, dividers, the checklist
+                          bars. Decorative, so no minimum applies. */
+  --field:   #798478;  /* CONTROL EDGES -- inputs, selects, buttons. The brand
+                          sage at full strength: 4.45:1, under AA for text but
+                          over the 3:1 WCAG 1.4.11 wants for the boundary of a
+                          control you are meant to find and click. */
+  --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --danger:  #FF5C8A;  /* a value the real form will refuse or cut: the same
+                          red as the other officer pages, kept off the brand
+                          maroon's hue. 5.87:1 on --surface */
+
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  padding: 2rem 1.25rem 5rem;
+}
+
+html, body { margin: 0; padding: 0; background: #111D13; }
+
+#hu-exp *, #hu-exp *::before, #hu-exp *::after { box-sizing: border-box; }
+
+#hu-exp .wrap { max-width: 68rem; margin: 0 auto; }
+
+#hu-exp h1 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 0 0 .5rem;
+  letter-spacing: -0.01em;
+}
+#hu-exp h2 { font-size: 1.1rem; margin: 0 0 .9rem; letter-spacing: .02em; }
+#hu-exp h3 {
+  font-size: .82rem;
+  margin: 0 0 .6rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+#hu-exp .lede { color: var(--muted); max-width: 46rem; margin: 0 0 2rem; }
+
+/* Side by side only in a landscape window. Stacked -- a phone, or half a
+   screen -- the picker goes UNDER the step. */
+#hu-exp .cols { display: grid; gap: 1.5rem; }
+#hu-exp .cols > nav { order: 2; }
+@media (min-width: 768px) and (orientation: landscape) {
+  #hu-exp .cols { grid-template-columns: 19rem 1fr; align-items: start; }
+  #hu-exp .cols > nav { order: 0; }
+}
+/* The corner button that jumps between the step and the picker under it.
+   Only stacked: side by side, both are already on screen. */
+#hu-exp .jump {
+  display: none;
+  position: fixed;
+  top: .5rem;
+  right: .5rem;
+  z-index: 10;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+#hu-exp .jump:hover { background: var(--ink); }
+@media not all and (min-width: 768px) and (orientation: landscape) {
+  #hu-exp .jump { display: block; }
+  #hu-exp header { padding-right: 2.5rem; }
+}
+
+#hu-exp .panel {
+  border: 1px solid rgba(121, 132, 120, 0.45);  /* clearer than --rule, so a
+                                                   panel reads as a panel */
+  background: var(--surface);
+  padding: 1.25rem;
+  margin: 0 0 1.25rem;
+}
+#hu-exp .panel:last-child { margin-bottom: 0; }
+
+#hu-exp ul.pick { list-style: none; margin: 0; padding: 0; }
+#hu-exp ul.pick li { margin: 0 0 .65rem; }
+#hu-exp ul.pick button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-left: 2px solid var(--field);   /* the only affordance this control
+                                            has at rest -- it has to be seen */
+  background: none;
+  color: var(--paper);
+  font: inherit;
+  font-size: .92rem;
+  padding: .1rem 0 .1rem .75rem;
+  cursor: pointer;
+}
+#hu-exp ul.pick button:hover { border-left-color: var(--accent); }
+#hu-exp ul.pick button[aria-current="true"] {
+  border-left-color: var(--accent);
+  color: var(--accent);
+}
+
+#hu-exp .fields { display: grid; gap: 1rem; }
+@media (min-width: 640px) { #hu-exp .fields { grid-template-columns: 1fr 1fr; } }
+#hu-exp .field.wide { grid-column: 1 / -1; }
+/* Names the order line that the Qty and Unit cost boxes below it belong to.
+   Full width so the pair sits under it, and a rule on top so it reads as the
+   start of a group rather than a stray label. Margin-top is zero on the first
+   one, because the fields grid already spaces it off what came before. */
+#hu-exp .line-name {
+  grid-column: 1 / -1;
+  margin: .5rem 0 -.25rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--paper);
+}
+/* Boxes that are already filled in and rarely changed, folded away so a step
+   shows four boxes at most. Same rule on email.html and form.html. */
+#hu-exp details.more { grid-column: 1 / -1; }
+#hu-exp details.more summary { cursor: pointer; font-size: .82rem; color: var(--muted); }
+#hu-exp details.more summary:hover { color: var(--paper); }
+#hu-exp details.more .fields { margin-top: .75rem; }
+#hu-exp label { display: block; font-size: .82rem; color: var(--muted); }
+#hu-exp input[type="text"],
+#hu-exp input[type="number"],
+#hu-exp input[type="date"],
+/* type="tel" has to be in this list, or the phone box falls back to the
+   browser default. */
+#hu-exp input[type="tel"],
+#hu-exp select,
+#hu-exp textarea {
+  display: block;
+  width: 100%;
+  margin-top: .3rem;
+  padding: .55rem .7rem;
+  border: 1px solid var(--field);
+  background: var(--ink);
+  color: var(--paper);
+  font: inherit;
+  font-size: .92rem;
+}
+#hu-exp textarea { resize: vertical; }
+/* inline-flex, not flex: a label stretched across the row toggles the box from
+   a click a foot away from it. Same fix as email.html's .check. */
+#hu-exp .check label { display: inline-flex; align-items: center; gap: .6rem; color: var(--paper); font-size: .92rem; }
+#hu-exp .check input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: #DEB72B; }
+#hu-exp .hint { display: block; color: var(--muted); font-size: .78rem; margin-top: .2rem; }
+
+#hu-exp .btn {
+  display: inline-block;
+  border: 1px solid var(--field);
+  background: none;
+  color: var(--paper);
+  font: inherit;
+  font-size: .88rem;
+  padding: .55rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+#hu-exp .btn:hover { border-color: var(--accent); color: var(--accent); }
+#hu-exp .btn.primary { border-color: var(--accent); color: var(--accent); }
+#hu-exp .btn.primary:hover { background: var(--accent); color: var(--ink); }
+#hu-exp .btn.tiny { font-size: .74rem; padding: .3rem .6rem; }
+#hu-exp .row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
+
+#hu-exp :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* One row per field of the real form, in the order the real form asks. The
+   label is the form's own wording, so there is never a question of which box
+   a value goes in. */
+#hu-exp .out {
+  border: 1px solid var(--rule);
+  padding: .8rem .9rem;
+  margin: 0 0 .7rem;
+}
+#hu-exp .out .out-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+  margin: 0 0 .45rem;
+}
+#hu-exp .out .out-label {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--accent);
+}
+#hu-exp .out .out-value {
+  border: 1px solid var(--rule);
+  background: var(--ink);
+  padding: .6rem .7rem;
+  font-family: var(--mono);
+  font-size: .82rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-x: auto;
+  margin: 0;
+  color: var(--paper);
+}
+#hu-exp .out .hint { margin-top: .4rem; }
+/* The character count under the editable Description. Muted until it goes over
+   the form's silent limit, then red: a value the form will cut is a mistake in
+   one box, which is what the red means on every officer page. */
+#hu-exp .out .count {
+  display: block;
+  margin-top: .4rem;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+/* Below the base rule they modify -- later wins at equal specificity, and this
+   file is all #id .class. */
+#hu-exp .out--picked .out-value { color: var(--accent); }
+#hu-exp .out .count.over { color: var(--danger); }
+
+#hu-exp .item {
+  border: 1px solid var(--rule);
+  padding: .9rem 1rem;
+  margin: 0 0 1rem;
+}
+#hu-exp .item-head {
+  margin: 0 0 .8rem;
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--accent);
+}
+#hu-exp .item .out:last-child { margin-bottom: 0; }
+
+#hu-exp .totals {
+  border-top: 1px solid var(--rule);
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+}
+#hu-exp .total-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0 0 .3rem;
+}
+#hu-exp .total-line.grand {
+  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: .6rem;
+  padding-top: .6rem;
+  border-top: 1px solid var(--rule);
+}
+
+#hu-exp .note {
+  border-left: 2px solid var(--accent);
+  padding-left: .75rem;
+  color: var(--muted);
+  font-size: .88rem;
+  /* Bottom margin as well as top: on step 2 the fields grid sits directly
+     under this, and with no gap a note read as a label belonging to
+     the box below it. */
+  margin: 1rem 0;
+}
+/* A link inside a note, e.g. in a before-you-start line (no order has one
+   today). Without this it renders the UA default blue, which on this background is
+   both unreadable and the only blue on the page. Scoped to .note rather than
+   bare `a`, because every other link here is already a .btn. */
+#hu-exp .note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+#hu-exp .note a:hover { color: var(--paper); }
+/* A saved link asked for something this page can no longer honour, or a date
+   is too close to file. Louder than .note on purpose. Paper on ink, so the
+   contrast pairing is one the README's table already covers. */
+#hu-exp .warn {
+  border-left: 2px solid var(--accent);
+  background: rgba(222, 183, 43, .08);
+  padding: .7rem .9rem;
+  margin: 0 0 1rem;
+  color: var(--paper);
+  font-size: .88rem;
+}
+/* A value the form will refuse, or a box waiting on another step: the red
+   line under that box. */
+#hu-exp .err { display: block; color: var(--danger); font-size: .78rem; margin-top: .2rem; }
+#hu-exp .err + .row { margin-top: .5rem; }
+
+/* One card per printed size, on the BYUSA orders. The same grid as the
+   composer's, copied rather than linked. */
+#hu-exp .sizes {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  margin-top: 1.25rem;
+}
+#hu-exp .size {
+  border: 1px solid var(--rule);
+  padding: .8rem .9rem;
+}
+#hu-exp .size .hint { margin-top: .35rem; }
+#hu-exp .size .row { margin-top: .6rem; }
+#hu-exp .size-head {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: .82rem;
+  color: var(--accent);
+}
+
+#hu-exp .linkbox { margin-top: 1rem; }
+#hu-exp .linkbox input { font-family: var(--mono); font-size: .8rem; }
+
+#hu-exp .muted { color: var(--muted); }
+#hu-exp .small { font-size: .82rem; }
+#hu-exp code {
+  font-family: var(--mono);
+  font-size: .85em;
+  color: var(--accent);
+  overflow-wrap: anywhere;
+}
+#hu-exp footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* ---- the three steps ----------------------------------------------------
+   A numbered rail rather than a progress bar. Every completed step is a
+   button, so back is always one click. */
+#hu-exp ol.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.25rem;
+  list-style: none;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  font-size: .82rem;
+}
+#hu-exp ol.steps li { margin: 0; }
+#hu-exp ol.steps button,
+#hu-exp ol.steps span {
+  display: block;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  padding: .1rem 0;
+  text-align: left;
+}
+#hu-exp ol.steps button { cursor: pointer; }
+#hu-exp ol.steps .num {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  border: 1px solid var(--field);
+  border-radius: 50%;
+  font-family: var(--mono);
+  margin-right: .5rem;
+}
+/* Modifiers below the base rule they modify — later wins at equal specificity,
+   and every rule in this file is #id .class. */
+/* Gold is what you click next: the steps AHEAD are gold, the ones behind
+   you go grey. */
+#hu-exp ol.steps .ahead button { color: var(--paper); }
+#hu-exp ol.steps .ahead button:hover { color: var(--accent); }
+#hu-exp ol.steps .done button:hover { color: var(--paper); }
+#hu-exp ol.steps .at span { color: var(--paper); }   /* not a link: you are on it */
+#hu-exp ol.steps .at .num { background: var(--picked); border-color: var(--picked); color: var(--paper); }
+#hu-exp ol.steps .ahead .num { border-color: var(--accent); color: var(--accent); }
+
+/* The step's own footer: back on the left, the one thing to do next on the
+   right. */
+#hu-exp .stepnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+#hu-exp .stepnav .spacer { flex: 1 1 auto; }
+
+/* The running total on step 2, so a typed quantity shows its consequence
+   without leaving the step. */
+#hu-exp .runtotal {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+  border-top: 1px solid var(--rule);
+  margin-top: 1.25rem;
+  padding-top: .9rem;
+}
+
+/* The description is the one output block you can edit in place, because it is
+   the one an officer routinely wants to reword before pasting. */
+#hu-exp .out textarea.out-value {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+#hu-exp .brief-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
+
+/* The ⓘ dot: may, never must. Muted, never --danger;
+   the accent once it is open. */
+#hu-exp .info {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.2rem; height: 1.2rem; margin: 0 0 0 .4rem; padding: 0;
+  border: 1px solid var(--muted); border-radius: 50%;
+  background: none; color: var(--muted);
+  font: italic 700 .75rem/1 Georgia, "Times New Roman", serif;
+  cursor: pointer; vertical-align: middle;
+}
+#hu-exp .info:hover, #hu-exp .info[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+#hu-exp .info-text { color: var(--muted); font-size: .82rem; margin-left: .45rem; vertical-align: middle; }
+/* A step named in a callout, as a link to it (stepRef). */
+#hu-exp .step-link {
+  display: inline; margin: 0; padding: 0; border: 0; background: none;
+  font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer;
+}
+#hu-exp .step-link:hover { color: var(--paper); }
+
+/* A `display` rule beats the UA stylesheet's [hidden], so .row would keep
+   showing a hidden button. Win it back explicitly. */
+#hu-exp [hidden] { display: none !important; }
+</style>
+
+<div id="hu-exp">
+  <button type="button" class="jump" id="hu-exp-jump" aria-label="Go to the orders">↓</button>
+<div class="wrap">
+
+  <header>
+    <h1>File an expense request</h1>
+  </header>
+
+  <div class="cols">
+
+    <nav class="panel" aria-label="Orders">
+      <h2>What are you buying?</h2>
+      <ul class="pick" id="hu-exp-catalogue"></ul>
+    </nav>
+
+    <main>
+      <div id="hu-exp-link-warnings" role="alert"></div>
+      <ol class="steps" id="hu-exp-steps" hidden></ol>
+      <div id="hu-exp-step"></div>
+    </main>
+
+  </div>
+
+  <footer>
+    <p>
+      Officer tool. Check every price against a current quote. Nothing here
+      submits anything, and nothing here leaves your browser.
+    </p>
+  </footer>
+
+</div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ------------------------------------------------------------------
+     Your club's settings. Replace each [YOUR …] placeholder.
+     ------------------------------------------------------------------ */
+  var CLUB_NAME   = "[YOUR CLUB]";
+  var CLUB_EMAIL  = "[YOUR CLUB EMAIL]";
+  var COMPOSE_PATH = "email.html";             /* where the email composer is
+                                                  published, relative to this page */
+  var EVENT_KIND  = "club event";              /* what the club puts on. It is the
+                                                  first option in the night-type
+                                                  dropdown and has to stay in step
+                                                  with it */
+  /* No phone constant. It is the officer's own mobile, several officers share
+     this page, and it is remembered per browser instead — see REMEMBERED. */
+
+  var WORDING = document.getElementById("hu-exp-wording");
+
+  /* ------------------------------------------------------------------
+     Small DOM helpers. Nothing here uses innerHTML for a value that came
+     from a link or from a form field.
+     ------------------------------------------------------------------ */
+  /* shared:steps  The step, remember and template helpers. The email
+     composer carries the same logic; fix a bug in both. */
+/*
+ * THE STEP, REMEMBER AND TEMPLATE HELPERS.
+ *
+ * LOGIC ONLY, NEVER A VALUE AN OFFICER WOULD CHANGE. So every
+ * label, id and storage key is the page's, passed in or read from the page's
+ * own variables: `state`, `step`, `render`, `syncUrl`, `stepEl`, `REMEMBERED`,
+ * `RETIRED`, `forgetRow`, `anyRemembered`, `warningsEl`, `linkWarnings`,
+ * `stepTargets`.
+ * A page that never calls a helper does not need what it reads, but a page
+ * that calls one and lacks a name throws at click time, not at load.
+ *
+ * Two spaces of indentation throughout: this is injected inside each page's
+ * IIFE and has to sit level with the code around it.
+ */
+
+  function el(tag, attrs, kids) {
+    var node = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (k) {
+        if (k === "text") node.textContent = attrs[k];
+        else if (k === "html") node.innerHTML = attrs[k];
+        else if (attrs[k] !== null && attrs[k] !== false) node.setAttribute(k, attrs[k]);
+      });
+    }
+    (kids || []).forEach(function (kid) {
+      node.appendChild(typeof kid === "string" ? document.createTextNode(kid) : kid);
+    });
+    return node;
+  }
+
+  function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+  /* An HTML parser eats the newline straight after <pre>, and trailing
+     whitespace is just the indentation of the closing tag. */
+  function readPre(node) {
+    if (!node) return "";
+    return node.textContent.replace(/^\n/, "").replace(/\s+$/, "");
+  }
+
+  /*
+   * {?flag}...{/flag} keeps the text only when the flag is on; {^flag}...{/flag}
+   * only when it is off. Not nestable, on purpose -- a nesting rule is one more
+   * thing for an officer to get wrong, and nothing here needs it.
+   *
+   * With no `flags`, the conditions read `vars`: form.html's wording asks
+   * {?x} of the same values it fills in.
+   */
+  function interpolate(text, vars, flags) {
+    flags = flags || vars;
+    var conditional = /\{([?^])([a-zA-Z]+)\}([\s\S]*?)\{\/\2\}/;
+    var guard = 0;
+    while (conditional.test(text) && guard++ < 100) {
+      text = text.replace(conditional, function (match, kind, name, inner) {
+        var on = !!flags[name];
+        return (kind === "?" ? on : !on) ? inner : "";
+      });
+    }
+    return text.replace(/\{([a-zA-Z]+)\}/g, function (match, name) {
+      var value = vars[name];
+      return value === undefined || value === null ? "" : String(value);
+    });
+  }
+
+  /* The one clipboard write. It can be refused (insecure context, a denied
+     permission, an older browser), so every caller also selects the text on
+     screen, and a selection can always be copied by hand. True when the write
+     was at least attempted. */
+  function toClipboard(text) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text)["catch"](function () { /* it is selected */ });
+        return true;
+      }
+    } catch (err) { /* fall through to the selection */ }
+    return false;
+  }
+
+  /*
+   * This browser's memory of the officer. REMEMBERED maps the page's own key
+   * to the storage key every officer page shares, so an officer types their
+   * name once on any of them. RETIRED holds what a key used to be
+   * called, read once as a fallback; a page with none has `var RETIRED = {}`.
+   * Storage throws in a private window, so both swallow it: the page still
+   * works for this visit.
+   */
+  function loadRemembered(key) {
+    try {
+      return localStorage.getItem(REMEMBERED[key]) ||
+             (RETIRED[key] ? localStorage.getItem(RETIRED[key]) : "") || "";
+    } catch (err) {
+      return "";
+    }
+  }
+
+  function saveRemembered(key, value) {
+    try {
+      if (value) localStorage.setItem(REMEMBERED[key], value);
+      else localStorage.removeItem(REMEMBERED[key]);
+      /* The retired key goes either way. Forgetting has to forget it too, or
+         the next load reads it back through the fallback above and the Forget
+         button looks broken; and once the new key holds the value there is
+         nothing left for the old one to do. */
+      if (RETIRED[key]) localStorage.removeItem(RETIRED[key]);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  /*
+   * The show date follows the officer across the three pages, under
+   * humoru.showDate: each page's REMEMBERED maps its own name for the Friday
+   * onto it. A date already past reads as nothing and is dropped. Forget me
+   * never touches it: it is not about the person.
+   */
+  function loadShowDate(key) {
+    var v = loadRemembered(key);
+    var d = new Date();
+    var today = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
+                ("0" + d.getDate()).slice(-2);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(v) || v < today) {
+      if (v) saveRemembered(key, "");
+      return "";
+    }
+    return v;
+  }
+
+  /* The Forget control appears the moment there is something to forget. */
+  function updateForgetRow() {
+    if (forgetRow) forgetRow.hidden = !anyRemembered();
+  }
+
+  /*
+   * Move to a step: a step number on expense.html and form.html, a step id on
+   * email.html. Keyboard and screen-reader focus goes to the new step's
+   * heading, or it is left on a button that no longer exists and the reader
+   * starts again from the top of the page.
+   */
+  function goTo(to) {
+    step = to;
+    render();
+    syncUrl();
+    var heading = stepEl.querySelector("h2");
+    if (heading) { heading.setAttribute("tabindex", "-1"); heading.focus(); }
+  }
+
+  /* Back is always one click, and it never validates: a half-filled form is
+     the officer's business, and a Continue that refuses is a page that argues.
+     The page names its own forward button when it is not "Continue". */
+  function stepNav(back, next, nextLabel) {
+    var kids = [];
+    if (back) {
+      var backButton = el("button", { type: "button", "class": "btn", text: "Back" });
+      backButton.addEventListener("click", function () { goTo(back); });
+      kids.push(backButton);
+    }
+    kids.push(el("span", { "class": "spacer" }));
+    if (next) {
+      var nextButton = el("button", { type: "button", "class": "btn primary",
+                                      text: nextLabel || "Continue" });
+      nextButton.addEventListener("click", function () { goTo(next); });
+      kids.push(nextButton);
+    }
+    return el("div", { "class": "stepnav" }, kids);
+  }
+
+  /* A worked-out answer with no Copy button: something the officer picks on
+     the form rather than types. `err` is the red line for a value the form
+     will refuse. */
+  function picked(label, value, hint, err) {
+    var kids = [el("div", { "class": "out-head" }, [el("p", { "class": "out-label", text: label })]),
+                el("pre", { "class": "out-value", text: value })];
+    if (err) kids.push(el("span", { "class": "err" }, stepRef(err)));
+    if (hint) kids.push(el("span", { "class": "hint", text: hint }));
+    return el("div", { "class": "out out--picked" }, kids);
+  }
+
+  /*
+   * A panel: a heading over its content. `above` goes BEFORE the heading --
+   * the before-you-start line, which has to be read before the heading is
+   * acted on: a note under it is read after the upload it warns about. An
+   * empty slot in `kids` is skipped, so a step can pass a part it did not
+   * need as null.
+   */
+  /*
+   * The ⓘ dot: something the officer MAY improve, with nothing refused
+   * Closed until pressed, and never red: red means must.
+   *
+   * ALWAYS THE LAST THING ON ITS LINE. Its line opens to the right, so
+   * anything after the dot moves when it is pressed.
+   */
+  function infoDot(text) {
+    var line = el("span", { "class": "info-text" }, stepRef(text));
+    line.hidden = true;
+    var dot = el("button", { type: "button", "class": "info", "aria-expanded": "false",
+                             "aria-label": text, text: "i" });
+    dot.addEventListener("click", function () {
+      var open = dot.getAttribute("aria-expanded") !== "true";
+      dot.setAttribute("aria-expanded", open ? "true" : "false");
+      line.hidden = !open;
+    });
+    return el("span", { "class": "info-wrap" }, [dot, line]);
+  }
+
+  /*
+   * A callout that names a step links to it. Text ending " on <step>" or
+   * " in <step>" gets the step name as a link; anything else comes back as
+   * plain text. Returns the nodes, for el()'s kids. The page supplies
+   * stepTargets(): its rail as {label, to}, `to` being what its goTo() takes.
+   */
+  function stepRef(text) {
+    var hit = null;
+    stepTargets().forEach(function (s) {
+      [" on ", " in "].forEach(function (joint) {
+        var tail = joint + s.label;
+        if (!hit && text.length > tail.length && text.slice(-tail.length) === tail) hit = s;
+      });
+    });
+    if (!hit) return [document.createTextNode(text)];
+    var link = el("button", { type: "button", "class": "step-link", text: hit.label });
+    link.addEventListener("click", function () { goTo(hit.to); });
+    return [document.createTextNode(text.slice(0, text.length - hit.label.length)), link];
+  }
+
+  function panel(title, kids, above) {
+    var node = el("section", { "class": "panel" });
+    (above || []).forEach(function (kid) { node.appendChild(kid); });
+    if (title) node.appendChild(el("h2", { text: title }));
+    (kids || []).forEach(function (kid) { if (kid) node.appendChild(kid); });
+    return node;
+  }
+
+  /*
+   * The link's parameters, as an object. Query string first, the hash as a
+   * fallback if the CMS ever starts eating "?". form.html reads its own four
+   * straight into state instead (its applyParams).
+   */
+  function readParams() {
+    var raw = location.search.replace(/^\?/, "");
+    if (!raw) raw = location.hash.replace(/^#/, "");
+    var out = {};
+    if (!raw) return out;
+    raw.split("&").forEach(function (pair) {
+      if (!pair) return;
+      var eq = pair.indexOf("=");
+      var name = eq < 0 ? pair : pair.substring(0, eq);
+      var value = eq < 0 ? "" : pair.substring(eq + 1);
+      try {
+        /* No "+" means space here. Classic query semantics say it does, but
+           these pages never write one, and a hand-typed callback number of
+           "+1 801..." turning into a leading space is a number an office
+           cannot call back on. Percent-escapes only, both directions. */
+        out[decodeURIComponent(name)] = decodeURIComponent(value);
+      } catch (err) {
+        /* A malformed %-escape is a broken link, not a broken page. Skip it. */
+      }
+    });
+    return out;
+  }
+
+  /* Anything a link asked for that the page could not honour. */
+  function renderLinkWarnings() {
+    clear(warningsEl);
+    linkWarnings.forEach(function (message) {
+      warningsEl.appendChild(el("p", { "class": "warn", text: message }));
+    });
+  }
+
+  /*
+   * Stacked -- a phone, half a screen -- the picker is under the step. The
+   * corner button gets there and back: down to the picker from anywhere above
+   * it, up to the top once it is in view. `downLabel` is the page's own.
+   */
+  function jumpButton(jumpId, root, downLabel) {
+    var jump = document.getElementById(jumpId);
+    var nav = document.querySelector(root + " .cols > nav");
+    if (!jump || !nav) return;
+    var atPicker = false;
+    /* No button when the picker already starts in the first half-screen --
+       nothing picked yet, so it is all there is -- since there is nowhere to
+       go. */
+    function sync() {
+      var top = nav.getBoundingClientRect().top;
+      jump.style.display = top + window.pageYOffset < window.innerHeight * 0.5 ? "none" : "";
+      /* Or scrolled to the bottom: a short picker never reaches the top half. */
+      atPicker = top < window.innerHeight * 0.5 ||
+        window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 2;
+      jump.textContent = atPicker ? "↑" : "↓";
+      jump.setAttribute("aria-label", atPicker ? "Back to the top" : downLabel);
+    }
+    jump.addEventListener("click", function () {
+      if (atPicker) window.scrollTo(0, 0);
+      else nav.scrollIntoView({ block: "start" });
+    });
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    /* Every step change re-renders, so the page's height changes under it. */
+    if (window.ResizeObserver) new ResizeObserver(sync).observe(document.body);
+    sync();
+  }
+
+  /* Calendar days, in local time: a show night is a day on a calendar, not an
+     instant. Read the page's own toDate and MONTHS, so only form.html and
+     expense.html call them. */
+  function addDays(iso, n) {
+    var d = toDate(iso);
+    if (!d) return "";
+    d.setDate(d.getDate() + n);
+    return d.getFullYear() + "-" +
+           ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
+           ("0" + d.getDate()).slice(-2);
+  }
+
+  /* "Fri Oct 23": the night heading on both pages' Copy step. */
+  function shortDate(iso) {
+    var d = toDate(iso);
+    return d ? ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][d.getDay()] + " " +
+               MONTHS[d.getMonth()].slice(0, 3) + " " + d.getDate() : "";
+  }
+  /* end shared:steps */
+
+  /* ------------------------------------------------------------------
+     Read the orders out of the markup above. The page has no idea what a
+     poster costs until it reads this — which is the point, because it means
+     a price change is an officer editing one visible line.
+     ------------------------------------------------------------------ */
+  function readOrders() {
+    var out = [];
+    var nodes = WORDING ? WORDING.querySelectorAll("div[data-key]") : [];
+    Array.prototype.forEach.call(nodes, function (node) {
+      /* The order email is a div with a data-key too, so it would otherwise
+         arrive here as a sixth order with no lines and no vendor. */
+      if (node.getAttribute("data-key") === EMAIL_KEY) return;
+      var items = [];
+      Array.prototype.forEach.call(node.querySelectorAll("ul[data-part='items'] li"), function (li) {
+        var cost = parseFloat(li.getAttribute("data-cost"));
+        var qty = parseInt(li.getAttribute("data-qty"), 10);
+        items.push({
+          slug: li.getAttribute("data-slug") || "",
+          item: li.getAttribute("data-item") || "",
+          type: li.getAttribute("data-type") || "",
+          qty: isNaN(qty) ? 1 : qty,
+          cost: isNaN(cost) ? 0 : cost,
+          /* The slug of another line on the same order that this line's cost is
+             added into WHEN THE ORDER IS PASTED INTO THE FORM -- the flat $0.75
+             flyer cut rides on the sheet line so BYUSA read one item, not two.
+             Both lines still show in the totals on this page. Empty for every
+             line that stands on its own. */
+          foldInto: li.getAttribute("data-fold-into") || "",
+          /* Which row this line ticks on BYUSA's own design brief. Named
+             separately from data-slug even though the two happen to match
+             today — relying on that coincidence is how it breaks later. */
+          briefItem: li.getAttribute("data-brief-item") || "",
+          /* The trim size the artwork is printed at, for the file BYUSA want
+             per size. ITS OWN ATTRIBUTE rather than parsed back out of
+             data-item, because data-item is prose an officer rewrites — the
+             day someone writes "Letter (8.5 x 11 inches)" a parser stops
+             finding a size and the page silently offers no file. */
+          artSize: li.getAttribute("data-art-size") || "",
+          /* The row to pick in the form's "Justification for Food Purchase"
+             dropdown, which only exists under a Food line. Its own attribute
+             and not derived from anything: the form will not submit a Food
+             item without it, and guessing a row that is not on the list is
+             exactly how data-type shipped "Printing" for three weeks. */
+          foodJustification: li.getAttribute("data-food-justification") || ""
+        });
+      });
+      /* "sentence" is what has to happen before you start, "next-steps" what is
+         left after you submit. Keep each on its own side. */
+      var nextSteps = node.querySelector("p[data-part='next-steps']");
+      var sentence = node.querySelector("p[data-part='sentence']");
+      var guests = node.querySelector("p[data-part='guests']");
+      out.push({
+        key: node.getAttribute("data-key"),
+        label: node.getAttribute("data-label") || node.getAttribute("data-key"),
+        vendorType: node.getAttribute("data-vendor-type") || "BYU",
+        vendor: node.getAttribute("data-vendor") || "",
+        /* TWO attributes, because they are two different facts and one string
+           cannot be both. data-vendor is the printer's name, for prose and for
+           {vendor}. data-vendor-option is the row to pick in the form's BYU
+           Vendor dropdown — a short, fixed list that does not contain BYU
+           Print & Mail at all. */
+        vendorOption: node.getAttribute("data-vendor-option") ||
+                      node.getAttribute("data-vendor") || "",
+        /* When the money is actually spent, relative to the show. Left out
+           means the poster clock; see pickupFor. */
+        purchaseRule: node.getAttribute("data-purchase-rule") || "",
+        /* The line added under the attendee names for people nobody can name
+           in advance, and the wording of the box that adds it. No line, no
+           box. */
+        guestsLine: guests ? guests.textContent.replace(/\s+/g, " ").replace(/^ | $/g, "") : "",
+        guestsLabel: guests ? guests.getAttribute("data-label") || "" : "",
+        guestsCount: guests ? parseInt(guests.getAttribute("data-count"), 10) || 0 : 0,
+        description: readPre(node.querySelector("pre[data-part='description']")),
+        /* Per ORDER, not per item, and printed under every line: why the club
+           needs the money is the same answer on every line. */
+        justification: readPre(node.querySelector("pre[data-part='justification']:not([data-night])")),
+        /* A kind of night with its own reason, from a justification carrying
+           data-night="<a night type>". */
+        justificationByNight: (function () {
+          var out = {};
+          Array.prototype.forEach.call(
+            node.querySelectorAll("pre[data-part='justification'][data-night]"),
+            function (pre) { out[pre.getAttribute("data-night")] = readPre(pre); });
+          return out;
+        })(),
+        /* Kept as a NODE, not a string: this line carries a link to the
+           composer, and textContent would quietly throw the link away and
+           leave its words dead. Cloned at render time so one
+           parse can serve any number of renders. */
+        sentence: sentence,
+        nextSteps: nextSteps ? nextSteps.textContent.replace(/\s+/g, " ").replace(/^ | $/g, "") : "",
+        items: items
+      });
+    });
+    return out;
+  }
+
+  /* The order email. It shows on any order with a data-brief-item line. */
+  var EMAIL_KEY = "byusa-email";
+
+  function readEmail() {
+    var node = WORDING ? WORDING.querySelector("div[data-key='" + EMAIL_KEY + "']") : null;
+    if (!node) return null;
+    return {
+      to: node.getAttribute("data-to") || "",
+      subject: readPre(node.querySelector("pre[data-part='subject']")),
+      body: readPre(node.querySelector("pre[data-part='body']"))
+    };
+  }
+
+  /* The "what kind of night" dropdown. The first option is what the page
+     starts on, so it has to agree with EVENT_KIND — a link that omits
+     eventKind is a link that means "whatever the page says today". */
+  function readNightTypes() {
+    var out = [];
+    var node = WORDING ? WORDING.querySelector("select[data-list='night-types']") : null;
+    if (!node) return out;
+    Array.prototype.forEach.call(node.options, function (option) {
+      out.push({
+        value: option.getAttribute("value") || option.textContent,
+        label: option.textContent,
+        guests: option.getAttribute("data-guests") === "yes",
+        nights: parseInt(option.getAttribute("data-nights"), 10) || 1
+      });
+    });
+    return out;
+  }
+
+  var ORDERS = readOrders();
+  var EMAIL = readEmail();
+  var NIGHT_TYPES = readNightTypes();
+
+  /* The free-text escape hatch on the dropdown, marked in the markup rather
+     than guessed at by position. */
+  var OTHER_NIGHT = "other";
+
+  /* ------------------------------------------------------------------
+     The form's own vocabulary. Every one of these is a string the page has
+     to match EXACTLY, because it names a control on somebody else's form
+     that the club cannot change and cannot type into.
+     ------------------------------------------------------------------ */
+  var NON_BYU       = "Non-BYU";   /* the radio, spelled as the form spells it */
+  var VENDOR_OTHER  = "Other";     /* the Non-BYU row that opens a text box   */
+  var TYPE_FOOD     = "Food";      /* the per-item Type that opens two boxes  */
+  var ON_THE_DAY    = "on-the-day";/* data-purchase-rule: bought on the night */
+
+  /* Any Food line makes it a food order, which is exactly the question the
+     form asks. Never a list of order keys. */
+  function orderHasFood(order) {
+    if (!order) return false;
+    return order.items.some(function (item) { return item.type === TYPE_FOOD; });
+  }
+
+  /* The names typed on step 2, one per line, blank lines dropped. */
+  function attendeeNames() {
+    return String(state.attendeeNames || "").split(/\n/)
+      .map(function (line) { return line.replace(/^\s+|\s+$/g, ""); })
+      .filter(function (line) { return line; });
+  }
+
+  /* The head count: one per name, plus the guests allowance when ticked.
+     Worked out, never typed, so it always agrees with the names. */
+  function attendeesFor(order) {
+    if (!orderHasFood(order)) return 0;
+    return attendeeNames().length + (guestsFor(order) ? order.guestsCount : 0);
+  }
+
+  /* Does this kind of night start with the guests box ticked? Read off the
+     night-type dropdown in the markup, so a new kind of night needs no code. */
+  function defaultGuests(order) {
+    if (!order || !order.guestsLine || !orderUses(order, "eventKind")) return false;
+    return NIGHT_TYPES.some(function (n) {
+      return n.guests && n.value === state.eventKind;
+    });
+  }
+
+  /* "" follows the night type; "yes" or "no" is the officer overruling it. */
+  function guestsFor(order) {
+    if (!order || !order.guestsLine) return false;
+    if (state.guests === "yes") return true;
+    if (state.guests === "no") return false;
+    return defaultGuests(order);
+  }
+
+  /* "Name of Each Attendee": one name per line, then the guests line. The
+     names come only from this browser's storage (see REMEMBERED). */
+  function attendeeListFor(order) {
+    var names = attendeeNames().join("\n");
+    if (guestsFor(order)) names = names ? names + "\n\n" + order.guestsLine : order.guestsLine;
+    return names;
+  }
+
+  /* Ten digits and nothing else: the form refuses spaces. A leading 1 is
+     dropped. */
+  function formPhone(raw) {
+    var digits = String(raw || "").replace(/\D/g, "");
+    if (digits.length === 11 && digits.charAt(0) === "1") digits = digits.slice(1);
+    return digits;
+  }
+
+  function orderTakesEmail(order) {
+    if (!order || !EMAIL || !EMAIL.to) return false;
+    return order.items.some(function (item) { return !!item.briefItem; });
+  }
+
+  /* Does this order's wording use {name}? Recruitment orders have no show,
+     so the event questions are asked only where the template uses them. */
+  function orderUses(order, name) {
+    if (!order) return false;
+    var text = String(order.description || "") + "\n" +
+               String(order.justification || "");
+    return text.indexOf("{" + name + "}") >= 0 ||
+           text.indexOf("{?" + name + "}") >= 0;
+  }
+
+  /* The show date, only on an order that has a show. The one place a stray
+     eventDate= in a link gets ignored. */
+  function eventDateFor(order) {
+    return orderUses(order, "eventDate") ? state.eventDate : "";
+  }
+
+  /* Does this order ask the question behind this state key? Step 2 and
+     buildLink both ask here, so a link never carries an answer the order
+     never asked for. Anything not named here is asked on every order. */
+  function orderAsks(order, key) {
+    if (key === "eventDate" || key === "eventKind") return orderUses(order, key);
+    if (key === "guests") return !!(order && order.guestsLine);
+    return true;
+  }
+
+  function currentOrder() {
+    for (var i = 0; i < ORDERS.length; i++) {
+      if (ORDERS[i].key === state.orderKey) return ORDERS[i];
+    }
+    return null;
+  }
+
+  /* ------------------------------------------------------------------
+     Dates. Everything here is local-time on purpose: a purchase date is a
+     day on a calendar, not an instant, and new Date("2026-10-05") is UTC
+     midnight — which is the day before, west of Greenwich.
+     ------------------------------------------------------------------ */
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"];
+  var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
+              "Friday", "Saturday"];
+
+  function parseDay(raw, warn) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(raw).replace(/^\s+|\s+$/g, ""));
+    if (!m) {
+      if (warn) warn("A date in this link was not in YYYY-MM-DD form, so it was ignored.");
+      return undefined;
+    }
+    return m[0];
+  }
+
+  function toDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || "");
+    if (!m) return null;
+    var d = new Date(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  /* m/d/yyyy, because that is the placeholder the real form shows. Pasting
+     2026-10-05 into a box asking for m/d/yyyy is a rejected form. */
+  function toFormDate(iso) {
+    var d = toDate(iso);
+    if (!d) return "";
+    return (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+  }
+
+  function toLongDate(iso) {
+    var d = toDate(iso);
+    if (!d) return "";
+    return DAYS[d.getDay()] + ", " + MONTHS[d.getMonth()] + " " + d.getDate() +
+           ", " + d.getFullYear();
+  }
+
+  /* Pick-up is the last Thursday a full two weeks before the show (T-15 for
+     a Friday show), so the posters are up in time. A target, not a deadline,
+     so the field stays editable. */
+  var PICKUP_DAY = 4;                          /* Thursday. Sunday is 0. */
+  var POSTER_WEEKS_UP = 14;                    /* days up — a BYUSA rule */
+
+  function pickupFromEvent(iso) {
+    var show = toDate(iso);
+    if (!show) return "";
+    var d = new Date(show.getTime());
+    d.setDate(d.getDate() - POSTER_WEEKS_UP);
+    /* Step back to the Thursday on or before that day. Never forward: a
+       later pick-up eats the buffer this date exists to create. */
+    while (d.getDay() !== PICKUP_DAY) d.setDate(d.getDate() - 1);
+    return d.getFullYear() + "-" +
+           ("0" + (d.getMonth() + 1)).slice(-2) + "-" +
+           ("0" + d.getDate()).slice(-2);
+  }
+
+  /*
+   * Count backwards over weekdays. Holidays are NOT handled — there is no
+   * list of BYU closures in this page and a wrong one would be worse than
+   * none, so the page says so rather than pretending.
+   */
+  /* Which clock the purchase date runs on: the poster clock, or on-the-day
+     (the show itself, for pizza). Anything unrecognised is the poster clock,
+     silently. */
+  function pickupFor(order, iso) {
+    if (order && order.purchaseRule === ON_THE_DAY) return iso;
+    return pickupFromEvent(iso);
+  }
+
+  /* A show is two nights, and food bought on the night is bought twice: one
+     expense request for Friday, one for Saturday. The nights come off the
+     night type's data-nights, so a party stays one. */
+  function nightsFor(order) {
+    var show = eventDateFor(order);
+    if (!order || order.purchaseRule !== ON_THE_DAY || !toDate(show)) return [];
+    var count = 1;
+    NIGHT_TYPES.forEach(function (n) {
+      if (n.value === state.eventKind) count = n.nights;
+    });
+    var out = [];
+    for (var i = 0; i < count; i++) out.push(addDays(show, i));
+    return out.length > 1 ? out : [];
+  }
+
+  /* Which night's request the Copy step shows: 0 Friday, 1 Saturday. Not in
+     state, like `step`: a link describes the order, not where you are in it. */
+  var nightShown = 0;
+
+  /* The date the Copy step is filing for: the show date, moved on to the
+     night on screen. */
+  function shownShowDate(order) {
+    var all = nightsFor(order);
+    return all.length ? all[Math.min(nightShown, all.length - 1)] : eventDateFor(order);
+  }
+
+  /* The purchase date for the night on screen. A typed one moves with it. */
+  function shownPurchaseDate(order) {
+    var all = nightsFor(order);
+    if (!all.length || !state.purchaseDate) return state.purchaseDate;
+    return addDays(state.purchaseDate, Math.min(nightShown, all.length - 1));
+  }
+
+  function money(n) { return "$" + n.toFixed(2); }
+
+  /* ------------------------------------------------------------------
+     State
+     ------------------------------------------------------------------ */
+  var state = {
+    orderKey: null,
+    officerName: "",
+    phone: "",   /* filled from this browser's memory after DEFAULTS is taken */
+    purchaseDate: "",
+    eventDate: "",
+    eventKind: EVENT_KIND,
+    guests: "",    /* blank means "whatever the night type says" */
+    attendeeNames: "", /* from this browser's storage only -- NEVER a link parameter */
+    desc: "",     /* blank means "use the one written in the markup" */
+    overrides: {} /* "slug.qty" / "slug.cost" -> number */
+  };
+
+  /* Which of the three steps is on screen. Deliberately not in state above,
+     because state is what DEFAULTS is taken from and what a link carries —
+     and where you are in a form is neither. */
+  var step = 1;
+
+  /* True once the officer or a link has set the pick-up date. From then on
+     it outranks the arithmetic, for good. */
+  var purchaseDateTouched = false;
+
+  /* Fill the pick-up date in from the show date unless somebody has set it.
+     Called from render() and syncUrl(); both are idempotent. */
+  function derivePickup() {
+    /* No show, no arithmetic. On a recruitment order the pick-up date is the
+       only date there is, and the officer types it. */
+    var order = currentOrder();
+    var show = eventDateFor(order);
+    if (purchaseDateTouched || !show) return;
+    state.purchaseDate = pickupFor(order, show);
+  }
+
+  /* Taken before any link is read, so it is the page's own idea of a default
+     rather than whatever a bookmark happened to contain. buildLink() omits
+     anything still equal to one of these — which is what lets a saved link
+     inherit NEXT year's prices after the prices change and the page is
+     re-pasted, instead of quietly reinstating this year's. */
+  var DEFAULTS = JSON.parse(JSON.stringify(state));
+
+  var linkWarnings = [];
+
+  /*
+   * Who is filing: remembered per browser and never in a link, because a link
+   * describes the order and this browser describes the person. Keys are named
+   * for the person, so every officer page shares them. Every access is
+   * wrapped, because storage can throw.
+   */
+  var REMEMBERED = {
+    officerName: "humoru.officerName",
+    phone: "humoru.officerPhone",
+    /* Who is eating. Members' names, so only ever in this browser: never in
+       this file, a link or a request. */
+    attendeeNames: "humoru.attendeeNames",
+    /* The show's Friday, shared with the other officer pages. Not a person,
+       so not in anyRemembered() and never forgotten by Forget me. */
+    eventDate: "humoru.showDate"
+  };
+
+  /* What those keys were called when only this page used them. Read once, as a
+     fallback, so an officer who already typed their name does not have to type
+     it again. Delete these two lines once nobody is running a browser that
+     stored them — there is no harm in them until then. */
+  var RETIRED = {
+    officerName: "humoru.expenseName",
+    phone: "humoru.expensePhone"
+  };
+
+  function anyRemembered() {
+    return !!(loadRemembered("officerName") || loadRemembered("phone"));
+  }
+
+  /* ------------------------------------------------------------------
+     Which values can travel in a link. One table drives both directions —
+     reading a link and writing one — because a parameter that can be read
+     but never gets written is a parameter nobody discovers.
+     ------------------------------------------------------------------ */
+  var PARAM_SPEC = [
+    { param: "order", key: "orderKey",
+      parse: function (raw, warn) {
+        for (var i = 0; i < ORDERS.length; i++) {
+          if (ORDERS[i].key === raw) return raw;
+        }
+        warn("This link asks for an order this page no longer has (“" + raw +
+             "”), so nothing is selected. Pick one below.");
+        return undefined;
+      } },
+    /* No phone parameter, on purpose: links get handed on, and a personal
+       number must not travel with them. It is remembered in the browser. */
+    { param: "purchaseDate", key: "purchaseDate", parse: parseDay },
+    { param: "eventDate",    key: "eventDate",    parse: parseDay },
+    { param: "eventKind",    key: "eventKind" },
+    /*
+     * How many people are eating. A link parameter, unlike the officer's name
+     * and number, because it describes the ORDER rather than the person — the
+     * rule this page settled on and email.html copied.
+     */
+    /* The guests box, only when the officer overruled the night type. */
+    { param: "guests",       key: "guests",
+      parse: function (raw) { return raw === "yes" || raw === "no" ? raw : undefined; } },
+    /* desc carries a reworded Description into the link. The old note=
+       parameter is gone, and a link carrying it has it ignored. */
+    { param: "desc",         key: "desc" }
+  ];
+
+  /* Line overrides are qty_<slug> / cost_<slug>: the line's permanent name,
+     never its position. */
+  function overrideParams(order) {
+    var out = [];
+    if (!order) return out;
+    order.items.forEach(function (item) {
+      out.push({ param: "qty_" + item.slug,  slug: item.slug, field: "qty" });
+      out.push({ param: "cost_" + item.slug, slug: item.slug, field: "cost" });
+    });
+    return out;
+  }
+
+  function overrideValue(item, field) {
+    var key = item.slug + "." + field;
+    return Object.prototype.hasOwnProperty.call(state.overrides, key)
+      ? state.overrides[key] : item[field];
+  }
+
+  /* Query string first, hash as a fallback in case the CMS ever eats "?".
+     Links this page writes always use "?". */
+  function applyParams() {
+    var params = readParams();
+    var warn = function (message) { linkWarnings.push(message); };
+
+    /* The order has to land first: the line overrides below are named after
+       lines that only exist once an order is chosen. */
+    PARAM_SPEC.forEach(function (spec) {
+      if (!Object.prototype.hasOwnProperty.call(params, spec.param)) return;
+      var value = spec.parse ? spec.parse(params[spec.param], warn) : params[spec.param];
+      if (value !== undefined) state[spec.key] = value;
+    });
+
+    /* A link that names a pick-up date was written by somebody who meant it,
+       so the show date must not quietly re-date it. Every link this page
+       writes carries one, so in practice this covers reopening your own. */
+    if (state.purchaseDate) purchaseDateTouched = true;
+
+    var order = currentOrder();
+    if (!order) return;
+
+    var known = {};
+    order.items.forEach(function (item) { known[item.slug] = true; });
+
+    Object.keys(params).forEach(function (name) {
+      var m = /^(qty|cost)_(.+)$/.exec(name);
+      if (!m) return;
+      var field = m[1];
+      var slug = m[2];
+      if (!known[slug]) {
+        warn("This link sets " + field + " for a line this order no longer has (“" +
+             slug + "”), so it was ignored.");
+        return;
+      }
+      var n = field === "qty" ? parseInt(params[name], 10) : parseFloat(params[name]);
+      if (isNaN(n) || n < 0) {
+        warn("This link set " + name + " to something that is not a number, so it was ignored.");
+        return;
+      }
+      if (field === "qty") n = Math.max(0, Math.min(10000, n));
+      state.overrides[slug + "." + field] = n;
+    });
+  }
+
+  function buildLink() {
+    var pairs = [];
+    var order = currentOrder();
+
+    PARAM_SPEC.forEach(function (spec) {
+      var value = state[spec.key];
+      if (value === null || value === undefined || value === "") return;
+      if (value === DEFAULTS[spec.key]) return;
+      /* An order that never asked the question does not pass the answer on:
+         one predicate, orderAsks, for every parameter. */
+      if (order && !orderAsks(order, spec.key)) return;
+      /* encodeURIComponent, not URLSearchParams — the latter encodes spaces
+         as "+", and one convention per file. */
+      pairs.push(spec.param + "=" + encodeURIComponent(String(value)));
+    });
+
+    if (order) {
+      order.items.forEach(function (item) {
+        ["qty", "cost"].forEach(function (field) {
+          var key = item.slug + "." + field;
+          if (!Object.prototype.hasOwnProperty.call(state.overrides, key)) return;
+          /* Equal to what the markup says is not an override — dropping it is
+             what lets the link pick up a new price later. */
+          if (state.overrides[key] === item[field]) return;
+          pairs.push(field + "_" + item.slug + "=" + encodeURIComponent(String(state.overrides[key])));
+        });
+      });
+    }
+
+    var base = location.href.split("#")[0].split("?")[0];
+    return pairs.length ? base + "?" + pairs.join("&") : base;
+  }
+
+  /*
+   * replaceState throws SecurityError in a sandboxed frame, and BrightSpot's
+   * inline preview pane is exactly that. So a refusal must cost nothing, and
+   * it latches rather than throwing again on every keystroke.
+   */
+  var urlSyncBroken = false;
+
+  function syncUrl() {
+    derivePickup();
+    saveRemembered("eventDate", state.eventDate);
+    if (urlSyncBroken) return;
+    try {
+      history.replaceState(null, "", buildLink());
+    } catch (err) {
+      urlSyncBroken = true;
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     The numbers
+     ------------------------------------------------------------------ */
+  /* A line set to 0 is not being bought, so it leaves the request, the
+     order email, the brief and the artwork -- not a "0 x" line at $0. A fold
+     line goes with its target: no flyers, no cutting. */
+  function lines(order) {
+    var rows = order.items.map(function (item) {
+      var qty = overrideValue(item, "qty");
+      var cost = overrideValue(item, "cost");
+      return {
+        item: item,
+        qty: qty,
+        cost: cost,
+        total: Math.round(qty * cost * 100) / 100
+      };
+    });
+    var zeroed = {};
+    rows.forEach(function (r) { if (r.qty <= 0) zeroed[r.item.slug] = true; });
+    return rows.filter(function (r) {
+      return r.qty > 0 && !(r.item.foldInto && zeroed[r.item.foldInto]);
+    });
+  }
+
+  /* The same, ignoring overrides. Slugs repeat across orders, so the
+     catalogue must not reprice orders nobody is looking at. */
+  function baseLines(order) {
+    return order.items.map(function (item) {
+      return {
+        item: item,
+        qty: item.qty,
+        cost: item.cost,
+        total: Math.round(item.qty * item.cost * 100) / 100
+      };
+    });
+  }
+
+  function grandTotal(rows) {
+    var sum = 0;
+    rows.forEach(function (r) { sum += r.total; });
+    return Math.round(sum * 100) / 100;
+  }
+
+  /* The rows as pasted into the form: a data-fold-into line's total is added
+     onto its target and the line drops out. The on-page totals list both. */
+  function pasteRows(rows) {
+    var out = [];
+    var bySlug = {};
+    rows.forEach(function (r) {
+      if (!r.item.foldInto) {
+        var copy = { item: r.item, qty: r.qty, cost: r.cost, total: r.total };
+        out.push(copy);
+        if (r.item.slug) bySlug[r.item.slug] = copy;
+      }
+    });
+    rows.forEach(function (r) {
+      if (!r.item.foldInto) return;
+      var target = bySlug[r.item.foldInto];
+      /* An orphaned fold (target renamed or deleted) keeps its own block
+         rather than vanishing the cost silently. */
+      if (target) target.total = Math.round((target.total + r.total) * 100) / 100;
+      else out.push({ item: r.item, qty: r.qty, cost: r.cost, total: r.total });
+    });
+    return out;
+  }
+
+  /*
+   * One line per row, in the format BYUSA asked for:
+   *   9 Quarter-sheet flyers 4" x 5.25"  (9 x $0.15 = $1.35)
+   * The only place a line's wording is decided: the order email and the
+   * pasted items must match line for line.
+   */
+  function summaryLines(rows) {
+    return rows.map(function (r) {
+      return r.qty + " " + r.item.item + "  (" + r.qty + " x " + money(r.cost) +
+             " = " + money(r.total) + ")";
+    });
+  }
+
+  function describedTotal(rows) {
+    return summaryLines(rows).join("\n") + "\n\nTOTAL  " + money(grandTotal(rows));
+  }
+
+  /* The placeholders every editable block on this page can use. One object so
+     the how-to comment's list stays true of all of them at once — a block that
+     quietly supported fewer would be a comment nobody could trust. */
+  function wordingVars(order, rows) {
+    return {
+      eventKind: state.eventKind,
+      eventDate: toLongDate(shownShowDate(order)),
+      officerName: state.officerName,
+      vendor: order.vendor,
+      total: money(grandTotal(rows))
+    };
+  }
+
+  function generatedDescription(order, rows) {
+    return interpolate(order.description, wordingVars(order, rows), {
+      eventDate: !!eventDateFor(order)
+    });
+  }
+
+  /* The Description the page wrote when the officer's edit began. Not in
+     state, because state is what a link carries: a link's desc is taken to
+     match the order it came with, and gets its basis on first sight. This is
+     what lets step 3 notice the order moved underneath an edit -- see the
+     stale-edit guard in renderStep3. */
+  var descBasis = null;
+  /* And what it was written from, so a mismatch can say which input moved:
+     [what, step, value] rows, in the order the officer would look. */
+  var descInputs = null;
+  function descSnapshot(order, rows) {
+    var out = rows.map(function (r) { return [r.item.item, "Order", String(r.qty)]; });
+    out.push(["show date", "Order", shownShowDate(order)]);
+    out.push(["night type", "Order", state.eventKind]);
+    out.push(["order total", "Order", money(grandTotal(rows))]);
+    out.push(["your name", "Who are you?", state.officerName]);
+    return out;
+  }
+  function baseDescOn(generated) {
+    var order = currentOrder();
+    descBasis = generated;
+    descInputs = order ? descSnapshot(order, lines(order)) : null;
+  }
+  /* "Description mismatched with 8.5x11 posters in Order". */
+  function mismatchWith() {
+    var order = currentOrder();
+    var now = descSnapshot(order, lines(order));
+    var was = descInputs || [];
+    for (var i = 0; i < now.length; i++) {
+      var old = was.filter(function (w) { return w[0] === now[i][0]; })[0];
+      if (!old || old[2] !== now[i][2]) return now[i][0] + " in " + now[i][1];
+    }
+    return "the order in Order";
+  }
+
+  function buildJustification(order, rows) {
+    var byNight = order.justificationByNight || {};
+    var text = orderUses(order, "eventKind") &&
+               Object.prototype.hasOwnProperty.call(byNight, state.eventKind)
+      ? byNight[state.eventKind] : order.justification;
+    return interpolate(text, wordingVars(order, rows), {
+      eventDate: !!eventDateFor(order)
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     The steps: 1 who you are, 2 the order, 3 the copying, and 4 (BYUSA
+     orders only) the hand-off. The rail is variable-length, so nothing may
+     hardcode 3 as the last step. Back always works.
+     ------------------------------------------------------------------ */
+  var catalogueEl = document.getElementById("hu-exp-catalogue");
+  var stepsEl = document.getElementById("hu-exp-steps");
+  var stepEl = document.getElementById("hu-exp-step");
+  var warningsEl = document.getElementById("hu-exp-link-warnings");
+
+  var STEPS = [
+    { n: 1, label: "Who are you?" },
+    { n: 2, label: "Order" },
+    { n: 3, label: "Copy" },
+    { n: 4, label: "Email" }
+  ];
+
+  /* The rail this order actually has. Same condition as the Email button and
+     the panels on step 4 — one test, so the rail and the step can never
+     disagree about whether there is a fourth one. */
+  /* The rail as stepRef() reads it: a callout naming one of these links to it. */
+  function stepTargets() {
+    return stepsFor(currentOrder()).map(function (s) { return { label: s.label, to: s.n }; });
+  }
+
+  function stepsFor(order) {
+    return orderTakesEmail(order) ? STEPS : STEPS.slice(0, 3);
+  }
+
+  function lastStep() {
+    return stepsFor(currentOrder()).length;
+  }
+
+  /* Replace with your club's own page on clubs.byu.edu, the
+     https://clubs.byu.edu/link/club/<number> address. Not the Financials deep
+     link: that redirects out of the portal. */
+  var PORTAL_URL =
+    "https://clubs.byu.edu/";
+
+  /* Outlook's compose route carries the whole message in the URL, so a long
+     one is a truncated one. Withhold the button rather than open a draft that
+     is quietly missing its last lines. */
+  var WEB_COMPOSE_URL_LIMIT = 2000;
+
+  /* clubs.byu.edu cuts the Description at 200 characters, silently. The
+     templates stay under it; the count under the box catches a reword. */
+  var FORM_DESC_LIMIT = 200;
+
+  function personKnown() {
+    return !!(state.officerName && state.phone);
+  }
+
+  /* The one answer on Order the Copy step cannot do without. After
+     derivePickup(), so a show date that fills it in counts. */
+  function orderAnswered() {
+    derivePickup();
+    return !!state.purchaseDate;
+  }
+
+  function clearAll() {
+    clear(stepEl);
+  }
+
+  /* ------------------------------------------------------------------
+     Small builders shared by the steps
+     ------------------------------------------------------------------ */
+  function fieldId(key) { return "hu-exp-" + key; }
+
+  function textField(key, label, value, hint, type, wide) {
+    var input = el("input", { type: type || "text", id: fieldId(key), value: value || "" });
+    input.addEventListener("input", function () { state[key] = input.value; });
+    var kids = [document.createTextNode(label), input];
+    if (hint) kids.push(el("span", { "class": "hint", text: hint }));
+    return el("div", { "class": wide ? "field wide" : "field" },
+                      [el("label", { "for": fieldId(key) }, kids)]);
+  }
+
+  function areaField(key, label, value, hint) {
+    var input = el("textarea", { id: fieldId(key), rows: "4" });
+    input.value = value || "";
+    input.addEventListener("input", function () { state[key] = input.value; });
+    var kids = [document.createTextNode(label), input];
+    if (hint) kids.push(el("span", { "class": "hint", text: hint }));
+    return el("div", { "class": "field wide" }, [el("label", { "for": fieldId(key) }, kids)]);
+  }
+
+  /*
+   * Like textField, but it writes through to this browser's memory. Kept
+   * separate rather than adding a flag to textField, because "this input is
+   * one of the two that persist" is worth reading at a glance.
+   */
+  function personField(key, label, type) {
+    var input = el("input", {
+      type: type || "text", id: fieldId(key), value: state[key] || ""
+    });
+
+    input.addEventListener("input", function () {
+      state[key] = input.value;
+      saveRemembered(key, input.value);
+      /* The Forget control has to appear the moment there is something to
+         forget, not on the next reload. */
+      updateForgetRow();
+    });
+
+    return el("div", { "class": "field" }, [
+      el("label", { "for": fieldId(key) }, [document.createTextNode(label), input])
+    ]);
+  }
+
+  /* One control for both, rather than a button per field: forgetting your
+     name but not your number is not a thing anybody wants. */
+  var forgetRow = null;
+
+  function forgetMeRow() {
+    var button = el("button", {
+      type: "button", "class": "btn tiny", id: "hu-exp-forget-me",
+      text: "Forget my name and number"
+    });
+    button.addEventListener("click", function () {
+      saveRemembered("officerName", "");
+      saveRemembered("phone", "");
+      state.officerName = "";
+      state.phone = "";
+      step = 1;
+      render();
+      syncUrl();
+    });
+    forgetRow = el("div", { "class": "field wide" }, [button]);
+    updateForgetRow();
+    return forgetRow;
+  }
+
+  function lineField(item, field, value, label, hint) {
+    var id = "hu-exp-" + field + "-" + item.slug;
+    var input = el("input", {
+      type: "number",
+      id: id,
+      value: String(value),
+      min: "0",
+      step: field === "qty" ? "1" : "0.01"
+    });
+    input.addEventListener("input", function () {
+      var n = field === "qty" ? parseInt(input.value, 10) : parseFloat(input.value);
+      if (isNaN(n)) return;
+      state.overrides[item.slug + "." + field] = n;
+      /* Update the running total in place. Re-rendering the step would
+         rebuild the input under the cursor and throw focus away. */
+      refreshRunningTotal();
+    });
+    var kids = [document.createTextNode(label), input];
+    if (hint) kids.push(el("span", { "class": "hint", text: hint }));
+    return el("div", { "class": "field" }, [el("label", { "for": id }, kids)]);
+  }
+
+  /* Who is eating. A textarea that writes straight through to this browser's
+     storage, like the name and number on step 1, and for the same reason. */
+  function namesField() {
+    var id = fieldId("attendeeNames");
+    var area = el("textarea", { id: id, rows: "6" });
+    area.value = state.attendeeNames || "";
+    area.addEventListener("input", function () {
+      state.attendeeNames = area.value;
+      saveRemembered("attendeeNames", area.value);
+    });
+    return el("div", { "class": "field wide" }, [
+      el("label", { "for": id }, [document.createTextNode("Name of each attendee"), area])
+    ]);
+  }
+
+  /* The guests box. Follows the night type until the officer clicks it, so
+     switching from a show to a party ticks it without a re-render. */
+  var guestsBox = null;
+
+  function guestsField(order) {
+    var id = fieldId("guests");
+    guestsBox = el("input", { type: "checkbox", id: id });
+    guestsBox.checked = guestsFor(order);
+    guestsBox.addEventListener("change", function () {
+      var want = guestsBox.checked;
+      state.guests = want === defaultGuests(order) ? "" : (want ? "yes" : "no");
+    });
+    return el("div", { "class": "field wide check" }, [
+      el("label", { "for": id }, [guestsBox, document.createTextNode(order.guestsLabel)])
+    ]);
+  }
+
+  function refreshGuestsBox() {
+    if (guestsBox && state.guests === "") guestsBox.checked = defaultGuests(currentOrder());
+  }
+
+  /* The night type: a dropdown, plus a text box for anything else, which is
+     also where an unrecognised value from an old link lands. */
+  function nightField() {
+    var id = fieldId("eventKind");
+    var known = NIGHT_TYPES.some(function (n) {
+      return n.value !== OTHER_NIGHT && n.value === state.eventKind;
+    });
+
+    var select = el("select", { id: id });
+    NIGHT_TYPES.forEach(function (night) {
+      var option = el("option", { value: night.value, text: night.label });
+      if (night.value === OTHER_NIGHT ? !known : night.value === state.eventKind) {
+        option.setAttribute("selected", "selected");
+      }
+      select.appendChild(option);
+    });
+
+    var other = el("input", {
+      type: "text", id: fieldId("eventKindOther"),
+      value: known ? "" : state.eventKind
+    });
+    other.hidden = known;
+    other.addEventListener("input", function () { state.eventKind = other.value; });
+
+    select.addEventListener("change", function () {
+      if (select.value === OTHER_NIGHT) {
+        other.hidden = false;
+        state.eventKind = other.value;
+        other.focus();
+      } else {
+        other.hidden = true;
+        state.eventKind = select.value;
+      }
+      refreshGuestsBox();
+    });
+
+    return el("div", { "class": "field" }, [
+      el("label", { "for": id }, [document.createTextNode("What kind of night is it"), select]),
+      other
+    ]);
+  }
+
+  /* ------------------------------------------------------------------
+     The catalogue, which is not a step: picking what you are buying is what
+     starts the form rather than a question inside it.
+     ------------------------------------------------------------------ */
+  function renderCatalogue() {
+    clear(catalogueEl);
+    ORDERS.forEach(function (order) {
+      var button = el("button", {
+        type: "button",
+        "aria-current": order.key === state.orderKey ? "true" : "false"
+      }, [
+        document.createTextNode(order.label)
+      ]);
+      button.addEventListener("click", function () {
+        state.orderKey = order.key;
+        state.overrides = {};
+        step = personKnown() ? 2 : 1;
+        render();
+        syncUrl();
+      });
+      catalogueEl.appendChild(el("li", null, [button]));
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     The step indicator. Every step you have already been past is a button,
+     so back is one click from anywhere and never more than one.
+     ------------------------------------------------------------------ */
+  function renderSteps() {
+    clear(stepsEl);
+    if (!currentOrder()) { stepsEl.hidden = true; return; }
+    stepsEl.hidden = false;
+
+    stepsFor(currentOrder()).forEach(function (s) {
+      var text = [el("span", { "class": "num", text: String(s.n) }),
+                  document.createTextNode(s.label)];
+      var inner;
+      if (s.n === step) {
+        inner = el("span", { "aria-current": "step" }, text);
+      } else {
+        inner = el("button", { type: "button" }, text);
+        inner.addEventListener("click", function () { goTo(s.n); });
+      }
+      /* Three states, not two. A step you have not reached yet must not read
+         as one you have already answered — on step 1 that would tell the
+         officer the whole form was somehow already done. */
+      /* Behind you is not the same as done: a step left with a box empty, or
+         Order with no pick-up date, stays gold. */
+      var unanswered = (s.n === 1 && !personKnown()) || (s.n === 2 && !orderAnswered());
+      stepsEl.appendChild(el("li", {
+        "class": s.n === step ? "at" : (s.n < step && !unanswered ? "done" : "ahead")
+      }, [inner]));
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Step 1 — who is filing
+     ------------------------------------------------------------------ */
+  function renderStep1() {
+    var fields = el("div", { "class": "fields" });
+    fields.appendChild(personField("officerName", "Your name"));
+    fields.appendChild(personField("phone", "Your phone #", "tel"));
+    fields.appendChild(forgetMeRow());
+
+    stepEl.appendChild(panel("Who are you?", [
+      fields,
+      stepNav(null, 2)
+    ]));
+  }
+
+  /* ------------------------------------------------------------------
+     Step 2 — the order. Autofilled from the link, so this is a confirm
+     rather than a fill.
+     ------------------------------------------------------------------ */
+  var runningTotalEl = null;
+
+  /* Whether the Quantities and prices fold is open, so a redraw keeps it. */
+  var linesOpen = false;
+
+  function refreshRunningTotal() {
+    if (!runningTotalEl) return;
+    var order = currentOrder();
+    if (!order) return;
+    runningTotalEl.textContent = money(grandTotal(lines(order)));
+  }
+
+  function renderStep2() {
+    var order = currentOrder();
+    var fields = el("div", { "class": "fields" });
+
+    /* Show date first when there is one, because the pick-up date is worked
+       out from it. With no show, the pick-up date is the first box, typed.
+       Neither gets a hint. */
+    if (orderUses(order, "eventDate")) {
+      fields.appendChild(textField("eventDate", "Show or event date",
+        state.eventDate, null, "date"));
+    }
+
+    var pickup = textField("purchaseDate", "What day will you pick these up?",
+      state.purchaseDate, null, "date");
+    /* Delegated off the wrapper, so textField stays the shared helper it is.
+       Typing here is the officer overruling the arithmetic, permanently. */
+    pickup.addEventListener("input", function () { purchaseDateTouched = true; });
+    fields.appendChild(pickup);
+
+    /* Its own test, not a knock-on of the date's: a recruitment order drops
+       BOTH event questions, and this is the half that gets forgotten. */
+    if (orderUses(order, "eventKind")) fields.appendChild(nightField());
+
+    /* Only on an order with something to eat: the form does not show these
+       boxes otherwise, so neither does the page. No head-count box: the count
+       is worked out from the names and the guests box. */
+    if (orderHasFood(order)) {
+      fields.appendChild(namesField());
+      if (order.guestsLine) fields.appendChild(guestsField(order));
+    }
+
+    /* The item name is stated ONCE, as a heading over its own two boxes. */
+    /* Folded away: four boxes showing on a step, at most. The TOTAL under the
+       fold follows them, so it seldom needs opening. */
+    var lineBoxes = el("div", { "class": "fields" });
+    order.items.forEach(function (item) {
+      lineBoxes.appendChild(el("p", { "class": "line-name", text: item.item }));
+      lineBoxes.appendChild(lineField(item, "qty", overrideValue(item, "qty"),
+        "Qty"));
+      lineBoxes.appendChild(lineField(item, "cost", overrideValue(item, "cost"),
+        "Unit cost"));
+    });
+    var more = el("details", { "class": "more" },
+      [el("summary", { text: "Quantities and prices" }), lineBoxes]);
+    if (linesOpen) more.open = true;
+    more.addEventListener("toggle", function () { linesOpen = more.open; });
+    fields.appendChild(more);
+
+    runningTotalEl = el("span", { text: money(grandTotal(lines(order))) });
+
+    var kids = [];
+    if (order.sentence) {
+      var before = order.sentence.cloneNode(true);
+      before.className = "note";
+      before.removeAttribute("data-part");
+      kids.push(before);
+    }
+    kids.push(fields);
+    kids.push(el("div", { "class": "runtotal" }, [
+      el("span", { text: "TOTAL" }), runningTotalEl
+    ]));
+    kids.push(stepNav(1, 3, "Copy"));
+
+    stepEl.appendChild(panel(order.label, kids));
+  }
+
+  /* ------------------------------------------------------------------
+     Step 3 — copy it into the real form
+     ------------------------------------------------------------------ */
+  function copyable(label, value, hint) {
+    var pre = el("pre", { "class": "out-value", text: value });
+    return copyBlock(label, pre, function () { return pre.textContent; }, hint);
+  }
+
+  /* The Description, editable in place. What the officer types goes into
+     state.desc, so the copied link carries it -- unless they type it back to
+     exactly what the page wrote, which lets the edit go. */
+  function editable(label, value, hint, generated) {
+    var area = el("textarea", { "class": "out-value", rows: "6" });
+    area.value = value;
+    /* clubs.byu.edu cuts this field at FORM_DESC_LIMIT with no warning, so the
+       count is shown here. It follows a reword live -- the templates are safe
+       on their own, an officer's edit is what puts it over. */
+    var count = el("span", { "class": "count" });
+    function refreshCount() {
+      var n = area.value.length;
+      count.textContent = n + " / " + FORM_DESC_LIMIT +
+        (n > FORM_DESC_LIMIT ? " -- too long, the form will cut it" : "");
+      count.className = n > FORM_DESC_LIMIT ? "count over" : "count";
+    }
+    area.addEventListener("input", function () {
+      if (area.value === generated && descBasis === generated) {
+        state.desc = "";
+        descBasis = null;
+      } else {
+        if (descBasis === null) baseDescOn(generated);
+        state.desc = area.value;
+      }
+      refreshCount();
+    });
+    refreshCount();
+    var block = copyBlock(label, area, function () { return area.value; }, hint, false);
+    block.appendChild(count);
+    return block;
+  }
+
+  function copyBlock(label, valueNode, read, hint) {
+    var button = el("button", { type: "button", "class": "btn tiny", text: "Copy" });
+    button.addEventListener("click", function () {
+      /* Selected either way: a button that silently does nothing is worse
+         than no button. */
+      var value = read();
+      if (valueNode.tagName === "TEXTAREA") {
+        valueNode.focus();
+        valueNode.select();
+      } else {
+        var range = document.createRange();
+        range.selectNodeContents(valueNode);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+      button.textContent = toClipboard(value) ? "Copied" : "Selected — press Ctrl+C";
+      setTimeout(function () { button.textContent = "Copy"; }, 2000);
+    });
+
+    var kids = [
+      el("div", { "class": "out-head" }, [
+        el("p", { "class": "out-label", text: label }),
+        button
+      ]),
+      valueNode
+    ];
+    if (hint) kids.push(el("span", { "class": "hint", text: hint }));
+    return el("div", { "class": "out" }, kids);
+  }
+
+  /* The form itself, opened where the officer is about to paste into it. */
+  function portalBlock() {
+    return panel("Open the form", [
+      el("p", { "class": "row" }, [
+        el("a", { "class": "btn primary", href: PORTAL_URL,
+                  target: "_blank", rel: "noopener",
+                  text: "Open clubs.byu.edu" })
+      ]),
+      el("p", { text: "Manage Club › Financials › New Expense Request." })
+    ]);
+  }
+
+  function renderStep3() {
+    var order = currentOrder();
+    var rows = lines(order);
+    var total = grandTotal(rows);
+
+    stepEl.appendChild(portalBlock());
+
+    var head = panel("Paste these into the form, top to bottom", []);
+
+    /* One night's request at a time, named the way form.html names it. */
+    var all = nightsFor(order);
+    if (nightShown >= all.length) nightShown = 0;
+    if (all.length) {
+      head.appendChild(el("p", { "class": "item-head",
+        text: "Night " + (nightShown + 1) + " · " + shortDate(all[nightShown]) }));
+    }
+
+    var purchase = copyable("Purchase date", toFormDate(shownPurchaseDate(order)) || "—");
+    /* The box stays, with where its value comes from. */
+    if (!state.purchaseDate) purchase.appendChild(el("span", { "class": "err" }, stepRef("Add purchase date on Order")));
+    head.appendChild(purchase);
+    head.appendChild(picked("Select Vendor Type", order.vendorType));
+    /* Write out whichever vendor dropdown the radio shows. Only the Non-BYU
+       "Other" box is typed, so only it gets a Copy button. */
+    var onByuList = order.vendorType !== NON_BYU;
+    head.appendChild(picked(onByuList ? "BYU Vendor" : "Non BYU Vendor",
+      order.vendorOption));
+    if (!onByuList && order.vendorOption === VENDOR_OTHER) {
+      head.appendChild(copyable("Other vendor", order.vendor));
+    }
+    head.appendChild(copyable("Your Phone #", formPhone(state.phone) || "—"));
+    /*
+     * The stale-edit guard. Keep the edit -- re-rendering would throw typing
+     * away -- but say when the order moved under it, and let the officer
+     * choose. email.html's message body has the same guard.
+     */
+    var generated = generatedDescription(order, rows);
+    if (state.desc && descBasis === null) baseDescOn(generated);
+    var desc = editable("Description", state.desc || generated, null, generated);
+    /* The order moved under an edit: a red line naming what moved, under the
+       box, and one Refresh. Typing in the box again
+       re-bases it. */
+    if (state.desc && descBasis !== generated) {
+      var line = el("span", { "class": "err" }, stepRef("Description mismatched with " + mismatchWith()));
+      var refresh = el("button", { type: "button", "class": "btn tiny", text: "Refresh description" });
+      var refreshRow = el("div", { "class": "row" }, [refresh]);
+      refresh.addEventListener("click", function () {
+        state.desc = "";
+        descBasis = null;
+        descInputs = null;
+        syncUrl();
+        render();
+      });
+      desc.querySelector("textarea").addEventListener("input", function () {
+        baseDescOn(generated);
+        line.remove();
+        refreshRow.remove();
+      });
+      desc.appendChild(line);
+      desc.appendChild(refreshRow);
+    }
+    head.appendChild(desc);
+    stepEl.appendChild(head);
+
+    var itemsPanel = panel("Item(s) to be purchased", []);
+
+    /* Built once and pasted under every line. The form asks per item; the
+       club's answer is about the event, so it does not vary by line. */
+    var justification = buildJustification(order, rows);
+
+    /* The numbered blocks are the folded rows (cut rolled into the sheet
+       line); the totals breakdown further down stays on the raw rows. */
+    var paste = pasteRows(rows);
+    paste.forEach(function (r, i) {
+      var block = el("div", { "class": "item" }, [
+        el("p", { "class": "item-head", text: "Item " + (i + 1) + " of " + paste.length })
+      ]);
+      block.appendChild(copyable("Item", r.item.item));
+      block.appendChild(picked("Type", r.item.type));
+      block.appendChild(copyable("Quantity", String(r.qty)));
+      /* THE LINE TOTAL, NOT THE UNIT PRICE: the form does not multiply.
+         Four real requests went in at one item's price. */
+      block.appendChild(copyable("Cost", r.total.toFixed(2)));
+      block.appendChild(copyable("Justification Details", justification));
+      /* The two boxes clubs.byu.edu opens under a Food line and under no
+         other. They are written out in the order the form puts them in, so
+         "paste these top to bottom" stays literally true. The reason is a
+         dropdown — clicked, not copied; the head count is typed. */
+      if (r.item.type === TYPE_FOOD) {
+        block.appendChild(picked("Justification for Food Purchase",
+          r.item.foodJustification));
+        var heads = attendeesFor(order);
+        block.appendChild(copyable("# of Attendees", heads ? String(heads) : "—"));
+        block.appendChild(copyable("Name of Each Attendee", attendeeListFor(order) || "—"));
+      }
+      itemsPanel.appendChild(block);
+    });
+
+    var totals = el("div", { "class": "totals" });
+    rows.forEach(function (r) {
+      totals.appendChild(el("div", { "class": "total-line" }, [
+        el("span", { text: r.qty + " × " + r.item.item }),
+        el("span", { text: money(r.total) })
+      ]));
+    });
+    totals.appendChild(el("div", { "class": "total-line grand" }, [
+      el("span", { text: "TOTAL" }),
+      el("span", { text: money(total) })
+    ]));
+    itemsPanel.appendChild(totals);
+    stepEl.appendChild(itemsPanel);
+
+    /* The brief, the artwork and the email are step 4, not here: see
+       renderStep4. */
+    if (orderTakesEmail(order)) {
+      stepEl.appendChild(stepNav(2, 4, "Email"));
+      return;
+    }
+
+    /* Last thing on the page for every other order: what is left to do. */
+    var next = nextStepsPanel(order);
+    if (next) stepEl.appendChild(next);
+
+    stepEl.appendChild(linkPanel());
+    var nav = stepNav(2, null);
+    /* The other night, named by its weekday. It flips back from Saturday, so
+       nobody gets stuck on one night. */
+    if (all.length > 1) {
+      var other = all[1 - nightShown];
+      var swap = el("button", { type: "button", "class": "btn primary",
+                                text: DAYS[toDate(other).getDay()] });
+      swap.addEventListener("click", function () {
+        nightShown = 1 - nightShown;
+        goTo(step);
+        window.scrollTo(0, 0);
+      });
+      nav.appendChild(swap);
+    }
+    stepEl.appendChild(nav);
+  }
+
+  /* What is left after submitting, in one line, at the end of the order's
+     last step. Never advice for a later errand. */
+  function nextStepsPanel(order, extra) {
+    if (!order.nextSteps) return null;
+    var kids = [ el("p", { "class": "note", text: order.nextSteps }) ];
+    if (extra) kids = kids.concat(extra);
+    return panel("Next steps", kids);
+  }
+
+  /* ------------------------------------------------------------------
+     Step 4: BYUSA orders only, reached by a button and never by a link. It
+     holds the hand-off link into the composer, saved until the request is
+     approved. The link carries summaryLines()' output, and never the request
+     number, which does not exist yet.
+     ------------------------------------------------------------------ */
+  function renderStep4() {
+    var order = currentOrder();
+
+    /* One panel: the approval wait and the hand-off link belong together. */
+    var next = nextStepsPanel(order, orderHandoffNodes(order));
+    if (next) stepEl.appendChild(next);
+
+    /* Still last, for the reason linkPanel gives: by now the description has
+       been read and possibly reworded, and the link has to carry the wording
+       that was actually used. */
+    stepEl.appendChild(linkPanel());
+    stepEl.appendChild(stepNav(3, null));
+  }
+
+  /* The distinct artwork sizes on this order -- two lines at one size is one
+     file. A line with no data-art-size is not artwork: the cutting charge is a
+     line on a request, not a thing to print. */
+  function artSizes(rows) {
+    var seen = {};
+    var out = [];
+    rows.forEach(function (r) {
+      var item = r.item;
+      if (!item.artSize || seen[item.artSize]) return;
+      seen[item.artSize] = true;
+      out.push(item.artSize);
+    });
+    return out;
+  }
+
+  /* The rows this order ticks on BYUSA's own design brief, as name:quantity. */
+  function briefRowsParam(order, rows) {
+    var out = [];
+    rows.forEach(function (r) {
+      if (!r.item.briefItem) return;
+      out.push(r.item.briefItem + ":" + r.qty);
+    });
+    return out.join(",");
+  }
+
+  /* Absolute, because it is opened days later from Planner. Built from
+     location, so it moves with the site. */
+  function composeLink(order, rows) {
+    var pairs = [
+      ["msg", "byusa_media"],
+      ["for", order.key],               /* picks the composer's "printing for" row */
+      ["order", describedTotal(rows)],
+      ["orderSizes", artSizes(rows).join(",")],
+      ["briefRows", briefRowsParam(order, rows)]
+    ];
+    var eventDate = eventDateFor(order);
+    if (eventDate) pairs.push(["eventDate", eventDate]);
+
+    var query = pairs.filter(function (p) { return p[1]; }).map(function (p) {
+      /* encodeURIComponent, never URLSearchParams: the latter writes a space
+         as "+", and one convention per file. */
+      return p[0] + "=" + encodeURIComponent(p[1]);
+    }).join("&");
+
+    var base;
+    try {
+      base = new URL(COMPOSE_PATH, location.href).href;
+    } catch (err) {
+      base = COMPOSE_PATH;              /* a browser too old for URL: relative still opens */
+    }
+    return base + "?" + query;
+  }
+
+  /* The hand-off link, as loose nodes for the Next steps panel rather than a
+     panel of its own. One line of instruction, the button, and the box that
+     shows the link after it is pressed. */
+  function orderHandoffNodes(order) {
+    var rows = lines(order);
+    var link = composeLink(order, rows);
+
+    var input = el("input", { type: "text", id: "hu-exp-order-link", readonly: "readonly" });
+    var box = el("div", { "class": "linkbox", id: "hu-exp-order-linkbox" }, [
+      el("label", { "for": "hu-exp-order-link" }, [input])
+    ]);
+    box.hidden = true;
+
+    var button = el("button", {
+      type: "button", "class": "btn primary", id: "hu-exp-copy-order-link",
+      text: "Save this Link"
+    });
+    button.addEventListener("click", function () {
+      input.value = link;
+      box.hidden = false;
+      input.focus();
+      input.select();
+      toClipboard(link);
+    });
+
+    return [
+      el("p", { "class": "muted", text:
+        "Use this autofill link when you are emailing BYUSA." }),
+      el("p", { "class": "row" }, [button]),
+      box
+    ];
+  }
+
+  /* ------------------------------------------------------------------
+     The saveable link. Last on the step on purpose: by the time you get here
+     the description has been read and possibly reworded, and the link has to
+     carry the wording that was actually used.
+     ------------------------------------------------------------------ */
+  function linkPanel() {
+    var input = el("input", { type: "text", id: "hu-exp-link-text", readonly: "readonly" });
+    /* The box appears only after the button is pressed, holding the link
+       that is already on the clipboard. */
+    var box = el("div", { "class": "linkbox", id: "hu-exp-linkbox" }, [
+      el("label", { "for": "hu-exp-link-text" }, [input])
+    ]);
+    box.hidden = true;
+
+    var button = el("button", {
+      type: "button", "class": "btn", id: "hu-exp-copy-link",
+      text: "Copy link"
+    });
+    button.addEventListener("click", function () {
+      var link = buildLink();
+      input.value = link;
+      box.hidden = false;
+      input.focus();
+      input.select();
+      toClipboard(link);
+    });
+
+    return panel("Autofill", [
+      el("p", { "class": "row" }, [button]),
+      box
+    ]);
+  }
+
+  /* ------------------------------------------------------------------
+     Render
+     ------------------------------------------------------------------ */
+  function render() {
+    /* The rail can get shorter under your feet, so the step is clamped BEFORE
+       anything draws — renderSteps below reads `step` to decide which pills
+       are done and which are still ahead. Here rather than in every caller,
+       because this is the one place that knows both the order and the step at
+       the same moment. */
+    if (step > lastStep()) step = lastStep();
+
+    derivePickup();
+    forgetRow = null;
+    runningTotalEl = null;
+    guestsBox = null;
+    renderCatalogue();
+    renderSteps();
+    clearAll();
+
+    if (!currentOrder()) {
+      stepEl.appendChild(panel("Pick an order", []));
+      return;
+    }
+
+    if (step === 1) renderStep1();
+    else if (step === 2) renderStep2();
+    else if (step === 3) renderStep3();
+    else renderStep4();
+  }
+
+  /* Keep the address bar in step with the form, from one delegated listener
+     (clear() keeps the container). syncUrl only: re-rendering steals focus. */
+  stepEl.addEventListener("input", syncUrl);
+  stepEl.addEventListener("change", syncUrl);
+
+  /* A changed show date moves two things the officer can see — the pick-up
+     date under it — and a date input holds no
+     text cursor worth protecting. Nothing else on step 2 needs a rebuild —
+     the quantities update their own total. */
+  stepEl.addEventListener("change", function (event) {
+    if (step === 2 && event.target && event.target.type === "date") render();
+  });
+
+  /* After DEFAULTS is taken, so a remembered value counts as something the
+     officer entered rather than as a page default. */
+  state.officerName = loadRemembered("officerName");
+  state.phone = loadRemembered("phone");
+  state.attendeeNames = loadRemembered("attendeeNames");
+  /* After DEFAULTS, before the link: a date in the link wins. */
+  state.eventDate = loadShowDate("eventDate");
+
+  /* Move whatever the old keys held onto the new ones, once, so the value is
+     where every other officer page will look for it. */
+  if (state.officerName) saveRemembered("officerName", state.officerName);
+  if (state.phone) saveRemembered("phone", state.phone);
+
+  /* Read the link BEFORE the first render, so the page comes up filled in
+     rather than filling in a frame later. */
+  applyParams();
+  saveRemembered("eventDate", state.eventDate);
+  renderLinkWarnings();
+
+  /* Where to start: the first step still unanswered -- an order with no
+     pick-up date lands on Order. Never step 4, which is only true once the
+     request is filed. */
+  if (!currentOrder()) step = 1;
+  else if (!personKnown()) step = 1;
+  else if (!orderAnswered()) step = 2;
+  else step = 3;
+
+  render();
+  jumpButton("hu-exp-jump", "#hu-exp", "Go to the orders");
+})();
+</script>
