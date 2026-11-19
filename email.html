@@ -2242,11 +2242,22 @@ html, body { margin: 0; padding: 0; background: #111D13; }
     }
     return true;
   }
-  var GAPS = [["[SHOW DATE]", "show date", "details"], ["[START DATE]", "start date", "details"], ["[END DATE]", "end date", "details"], ["[THE ORDER LINES GO HERE]", "the order", "details"], ["[THEIR FIRST NAME]", "editor name", "details"], ["[WHICH SHOW]", "show name", "details"], ["[LINK TO WATCH THE FOOTAGE]", "link to footage", "details"], ["[LINK TO SEND CLIPS BACK]", "link to send clips back", "details"], ["[FIRST NAME]", "your name", "person"], ["[LAST NAME]", "your last name", "person"]];
+  var GAPS = [["[SHOW DATE]", "show date", "details"], ["[START DATE]", "start date", "details"], ["[END DATE]", "end date", "details"], ["[THE ORDER LINES GO HERE]", "the order", "details"], ["[THEIR FIRST NAME]", "editor name", "details"], ["[WHICH SHOW]", "show name", "details"], ["[LINK TO WATCH THE FOOTAGE]", "link to footage", "details"], ["[LINK TO SEND CLIPS BACK]", "link to send clips back", "details"], ["[FIRST NAME]", "your name", "person"], ["[LAST NAME]", "your last name", "person"], ["[ADD YOUR PHONE NUMBER]", "your phone number", "person"]];
+  var YOUR_GAP = /\[[^\[\]]*\bYOUR\b[^\[\]]*\]/g;
   function gapsIn(text) {
-    return GAPS.filter(function(g) {
+    var found = GAPS.filter(function(g) {
       return text.indexOf(g[0]) >= 0;
     });
+    var seen = {};
+    found.forEach(function(g) {
+      seen[g[0]] = true;
+    });
+    (text.match(YOUR_GAP) || []).forEach(function(bracket) {
+      if (seen[bracket]) return;
+      seen[bracket] = true;
+      found.push([bracket, bracket.slice(1, -1).toLowerCase(), "details"]);
+    });
+    return found;
   }
   var INPUT_NAMES = { eventDate: "show date", quantity: "poster count", size: "poster size", mounted: "mounting", venue: "venue", ticketPrice: "ticket price", ticketUrl: "ticket link", rangeStart: "start date", rangeEnd: "end date", building: "building", hall: "building", recipient: "BYU email", editorName: "editor name", showName: "show name", footageLink: "link to footage", uploadLink: "link to send clips back", requestNumber: "expense request number", order: "the order", printFor: "printing for", printLines: "quantities", officerName: "your name", callbackPhone: "your phone number" };
   var INPUT_STATE = { building: "buildingIndex", hall: "hallIndex", printLines: "lineQty" };
